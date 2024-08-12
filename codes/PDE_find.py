@@ -12,6 +12,7 @@ from sklearn.metrics import mean_squared_error
 import Data_generator as Data_generator
 import configure as config
 
+# 采用有限差分法计算函数项中的梯度。使用 STRidge 查找当前迭代步骤中所有函数项（树）的最优组合，并评估当前迭代步骤的最优组合（即发现的偏微分方程）与观测值之间的拟合度
 seed = config.seed
 torch.random.manual_seed(seed)
 np.random.seed(seed)

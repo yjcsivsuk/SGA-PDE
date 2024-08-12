@@ -1,7 +1,7 @@
 from setup import *
 import copy
 
-
+# 定义二叉树中的节点类和树类，分别对应PDE中的算子/操作数和函数项。定义 tree2str_merge，可以将二叉树转换为偏微分函数项
 class Node:
     """
         1. depth: 节点深度

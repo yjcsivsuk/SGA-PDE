@@ -18,7 +18,7 @@ else:
 ###########################################################################################
 # Neural network
 max_epoch = 100 * 1000
-path = 'model/'+problem+'_sine_sin_50_3fc2_'+'%d'%(max_epoch/1000)+'k_Adam.pkl'
+path = problem+'_sine_sin_50_3fc2_'+'%d'%(max_epoch/1000)+'k_Adam.pkl'
 hidden_dim = 50
 
 train_ratio = 1  # the ratio of training dataset
@@ -28,8 +28,8 @@ normal = True
 ###########################################################################################
 # Metadata
 fine_ratio = 2 # 通过MetaData加密数据的倍数
-use_metadata = True
-delete_edges = True
+use_metadata = False
+delete_edges = False
 print('use_metadata =', use_metadata)
 print('delete_edges =', delete_edges)
 

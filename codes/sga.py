@@ -3,7 +3,7 @@ import warnings
 import sys
 warnings.filterwarnings('ignore')
 
-
+# SGA-PDE的主要程序。定义 SGA 类。SGA-PDE中的交叉运算在“corss_over”函数中定义。SGA-PDE的突变和替换操作在“change”函数中定义
 class Logger(object):
     def __init__(self, filename='default.log', stream=sys.stdout):
         self.terminal = stream
@@ -191,4 +191,19 @@ if __name__ == '__main__':
     sga = SGA(num=sga_num, depth=sga_depth, width=sga_width, p_var=sga_p_var, p_rep=1, p_mute=sga_p_mute, p_cro=sga_p_cro)
     sga.run(sga_run)
 
+# 超参数设定
+# num = 20 # the population of each generation is 20.
 
+# depth = 4 # the maximum tree depth hyperparameter to constrain the number of nesting calculations in each function term.
+
+# width = 5 # the maximum forest width hyperparameter to constrain the number of function terms in the PDE.
+
+# p_var = 0.5 # The probability of generating a node as an operand (leaf node) instead of an operator is 0.5.
+
+# p_mute = 0.3 # The probability of mutation at each node is 0.3.
+
+# p_cro = 0.5 # The probability of crossover between different function terms in two PDE is 0.5.
+
+# p_rep = 1 # The probability of regenerating a term to replace the original term in the PDE.
+
+# sga_run = 100 # the maximum generation is set to 100.

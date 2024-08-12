@@ -15,6 +15,10 @@ from torch.autograd import Variable
 import configure as config
 from configure import divide
 
+# 1.从Data_generator加载数据
+# 2.评估偏微分方程与观测值之间的适应度（计算偏微分方程左侧和右侧之间的误差）。偏微分方程中涉及的梯度可以通过有限差分或自评分来计算
+# 3.绘制不同阶数梯度的图形，给定偏微分方程的左右两侧
+# 4.在 SGA 中设置运算符和操作数
 simple_mode = True
 see_tree = None
 plot_the_figures = True
@@ -368,3 +372,10 @@ if simple_mode:
 #     den = np.array([['t', 0, t], ['x', 0, x]])
 
 pde_lib, err_lib = [], []
+
+# 超参数设定
+# simple_mode = True  # use the simple operators and operands.
+
+# use_metadata = False  # whether to use the Metadata.
+
+# use_difference = True # whether to use finite difference or autograd to calculate the gradients.

@@ -11,6 +11,7 @@ import torch.optim as optim
 from sklearn.metrics import mean_squared_error
 import configure as config
 
+# 选配模块。构建用于生成元数据的神经网络（代理模型），并通过 RMSE 和 R2 评估神经网络。默认情况下不使用此模块。有关元数据的更多详细信息，请参阅 DL-PDE
 max_epoch = config.max_epoch
 train_ratio = config.train_ratio # the ratio of training dataset
 fine_ratio = config.fine_ratio # 通过MetaData加密数据的倍数
@@ -56,7 +57,7 @@ def model_NN(x_train, y_train, num_feature):
         # nn.utils.clip_grad_norm(model.parameters(), 5) # clip gradient
         optimizer.step()
         if (epoch+1)%display_step == 0:
-            print('step %d, loss= %.6f'%(epoch+1, loss.cpu().data[0]))
+            print('step %d, loss= %.6f'%(epoch+1, loss.item()))
     y_pred_train = model(x)
     y_pred_train = y_pred_train.cpu().data.numpy().flatten()
     return y_pred_train, model
