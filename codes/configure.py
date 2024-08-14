@@ -4,19 +4,24 @@ import scipy.io as scio
 import torch
 import torch.nn as nn
 
-problem = 'chafee-infante' # 'Burgers' # 'chafee-infante' # 'Kdv' #'PDE_divide' # 'PDE_compound'
+# 选择实验数据集
+problem = 'Burgers' # 'Burgers' # 'chafee-infante' # 'Kdv' #'PDE_divide' # 'PDE_compound'
 seed = 0
-device = torch.device('cuda:0')
-# device = torch.device('cpu')
+if torch.cuda.is_available:
+    device = torch.device('cuda:0')
+elif torch.backends.mps.is_available:
+    device = torch.device('mps')
+else:
+    device = torch.device('cpu')
 
 ###########################################################################################
 # Neural network
 max_epoch = 100 * 1000
-path = problem+'_sine_sin_50_3fc2_'+'%d'%(max_epoch/1000)+'k_Adam.pkl'
+path = 'model/'+problem+'_sine_sin_50_3fc2_'+'%d'%(max_epoch/1000)+'k_Adam.pkl'
 hidden_dim = 50
 
-train_ratio = 1 # the ratio of training dataset
-num_feature = 2
+train_ratio = 1  # the ratio of training dataset
+num_feature = 2  # 该算法使用的数据集都是形如u(x,t)的，因此特征数为2。如果要使用自己的数据集，需要修改为7，即u(x1,x2,x3,x4,x5,x6,t)
 normal = True
 
 ###########################################################################################
@@ -34,6 +39,7 @@ aic_ratio = 1  # lower this ratio, less important is the number of elements to A
 print(path)
 print('fine_ratio = ',fine_ratio)
 ###########################################################################################
+# 这个网络是在干啥？为什么前馈操作中还有sin？
 class Net(nn.Module):
     def __init__(self,n_feature,n_hidden,n_output):
         super(Net,self).__init__()
@@ -121,3 +127,21 @@ if problem == 'chafee-infante': # 301*200的新数据
     left_side_origin = 'left_side_origin = ut_origin'
 
 
+# 超参数设定
+# problem = 'chaffee-infante' # choose the dataset
+
+# seed = 0 # set the random seed
+
+# fine_ratio = 2 # the ratio of Metadata set to original dataset. A ratio of 2 means that the sampling interval of Metadata is twice that of original data.
+
+# use_metadata = False # whether to use Metadata
+
+# delete_edges = False # whether to delete the Metadata on the boundaries of the field where the derivatives are not accurate based on finite difference.
+
+# aic_ratio = 1  # the hyperparameter in the AIC. lower this ratio, less important is the number of elements to AIC value.
+
+# max_epoch = 100 * 1000 # Hyperparameter to generate the Metadata Neural Networks.
+
+# hidden_dim = 50 # Hyperparameter to generate the Metadata Neural Networks. Number of neurons in the hidden layer.
+
+# normal = True # Hyperparameter to generate the Metadata Neural Networks. Whether to normalize the inputs.
