@@ -7,9 +7,10 @@ import torch.nn as nn
 # 选择实验数据集
 problem = 'Burgers' # 'Burgers' # 'chafee-infante' # 'Kdv' #'PDE_divide' # 'PDE_compound'
 seed = 0
-if torch.cuda.is_available:
+device = None
+if torch.cuda.is_available():
     device = torch.device('cuda:0')
-elif torch.backends.mps.is_available:
+elif torch.backends.mps.is_available():
     device = torch.device('mps')
 else:
     device = torch.device('cpu')
@@ -27,8 +28,8 @@ normal = True
 ###########################################################################################
 # Metadata
 fine_ratio = 2 # 通过MetaData加密数据的倍数
-use_metadata = False
-delete_edges = False
+use_metadata = True
+delete_edges = True
 print('use_metadata =', use_metadata)
 print('delete_edges =', delete_edges)
 
@@ -37,6 +38,7 @@ aic_ratio = 1  # lower this ratio, less important is the number of elements to A
 
 
 print(path)
+print(device)
 print('fine_ratio = ',fine_ratio)
 ###########################################################################################
 # 这个网络是在干啥？为什么前馈操作中还有sin？

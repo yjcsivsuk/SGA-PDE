@@ -11,6 +11,7 @@ import torch.optim as optim
 from sklearn.metrics import mean_squared_error
 import configure as config
 
+# 生成数据集。如果使用元数据，请将元数据与原始数据进行比较。
 fine_ratio = config.fine_ratio # 通过MetaData加密数据的倍数
 normal = config.normal
 use_metadata = config.use_metadata
@@ -86,7 +87,7 @@ if use_metadata == True:
     x_index_fine = np.linspace(0,100, n_fine)
     plt.plot(x_index, u[:,int(m/2)])
     plt.plot(x_index_fine, u_new[:,int(m_fine/2)])
-    # plt.show()
+    plt.show()
 
 if use_metadata == True:
     u = u_new

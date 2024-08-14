@@ -56,8 +56,7 @@ def model_NN(x_train, y_train, num_feature):
         # nn.utils.clip_grad_norm(model.parameters(), 5) # clip gradient
         optimizer.step()
         if (epoch+1)%display_step == 0:
-            print('hi')
-            # print('step %d, loss= %.6f'%(epoch+1, loss.cpu().data[0]))
+            print('step %d, loss= %.6f'%(epoch+1, loss.cpu().data[0]))
     y_pred_train = model(x)
     y_pred_train = y_pred_train.cpu().data.numpy().flatten()
     return y_pred_train, model
