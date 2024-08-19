@@ -1,6 +1,7 @@
 from pde import *
 import warnings
 import sys
+import datetime
 warnings.filterwarnings('ignore')
 
 # SGA-PDE的主要程序。定义 SGA 类。SGA-PDE中的交叉运算在“corss_over”函数中定义。SGA-PDE的突变和替换操作在“change”函数中定义
@@ -170,8 +171,11 @@ if __name__ == '__main__':
     # evaluate_mse(pde)
 
     # pdb.set_trace()
-    sys.stdout = Logger('notes.log', sys.stdout)
-    sys.stderr = Logger('notes.log', sys.stderr)
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    log_filename = f'output/sga/notes_{current_time}.log'
+    error_log_filename = f'output/sga/errors_{current_time}.log'
+    sys.stdout = Logger(log_filename, sys.stdout)
+    sys.stderr = Logger(error_log_filename, sys.stderr)
     sga_num = 20
     sga_depth = 4
     sga_width = 5
