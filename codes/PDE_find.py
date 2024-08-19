@@ -92,7 +92,7 @@ def Diff2(u, dxt, name):
 
     return uxt
 
-
+# train函数使用STRidge训练一个预测器。它在不同的tol值上运行，并在训练集上训练预测器，然后在保留集上使用损失函数对它们进行评估。
 def Train(R, Ut, lam, d_tol, AIC_ratio=1, maxit=10, STR_iters=10, l0_penalty=1, normalize=2, split=0.8,
           print_best_tol=False, sparse='STR'):
     """

@@ -228,7 +228,7 @@ def tree2str_merge(a_tree):
 
 if __name__ == '__main__':
     tree = Tree(max_depth=4, p_var=0.5)
-    print(tree.inorder)
+    print(f'前序遍历:', tree.inorder)
     tree.mutate(p_mute=1)
-    print(tree.inorder)
+    print(f'中序遍历:', tree.inorder)
 
