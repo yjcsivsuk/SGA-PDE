@@ -4,7 +4,7 @@ import sys
 import datetime
 warnings.filterwarnings('ignore')
 
-# SGA-PDE的主要程序。定义 SGA 类。SGA-PDE中的交叉运算在“corss_over”函数中定义。SGA-PDE的突变和替换操作在“change”函数中定义
+# SGA-PDE的主要程序。定义 SGA 类。SGA-PDE中的交叉运算在 corss_over 函数中定义。SGA-PDE的突变和替换操作在 change 函数中定义
 class Logger(object):
     def __init__(self, filename='default.log', stream=sys.stdout):
         self.terminal = stream

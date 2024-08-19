@@ -12,7 +12,7 @@ from sklearn.metrics import mean_squared_error
 import Data_generator as Data_generator
 import configure as config
 
-# 采用有限差分法计算函数项中的梯度。使用 STRidge 查找当前迭代步骤中所有函数项（树）的最优组合，并评估当前迭代步骤的最优组合（即发现的偏微分方程）与观测值之间的拟合度
+# 采用有限差分法计算函数项中的导数。使用 STRidge 查找当前迭代步骤中所有函数项（树）的最优组合，并评估当前迭代步骤的最优组合（即发现的偏微分方程）与观测值之间的拟合度
 seed = config.seed
 torch.random.manual_seed(seed)
 np.random.seed(seed)
@@ -22,7 +22,7 @@ u = Data_generator.u
 x = Data_generator.x
 t = Data_generator.t
 
-
+# 一阶有限差分
 def FiniteDiff(u, dx):
 
     n = u.size
@@ -35,7 +35,7 @@ def FiniteDiff(u, dx):
     ux[n - 1] = (3.0 / 2 * u[n - 1] - 2 * u[n - 2] + u[n - 3] / 2) / dx
     return ux
 
-
+# 二阶有限差分
 def FiniteDiff2(u, dx):
 
     n = u.size
@@ -48,7 +48,7 @@ def FiniteDiff2(u, dx):
     ux[n - 1] = (2 * u[n - 1] - 5 * u[n - 2] + 4 * u[n - 3] - u[n - 4]) / dx ** 2
     return ux
 
-
+# 求一阶导
 def Diff(u, dxt, name):
     """
     Here dx is a scalar, name is a str indicating what it is
@@ -70,7 +70,7 @@ def Diff(u, dxt, name):
 
     return uxt
 
-
+# 求二阶导
 def Diff2(u, dxt, name):
     """
     Here dx is a scalar, name is a str indicating what it is

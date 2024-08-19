@@ -16,8 +16,8 @@ import configure as config
 from configure import divide
 
 # 1.从Data_generator加载数据
-# 2.评估偏微分方程与观测值之间的适应度（计算偏微分方程左侧和右侧之间的误差）。偏微分方程中涉及的梯度可以通过有限差分或自动微分来计算
-# 3.绘制不同阶数梯度的图形，给定偏微分方程的左右两侧
+# 2.评估偏微分方程与观测值之间的适应度（计算偏微分方程左侧和右侧之间的误差）。偏微分方程中涉及的导数可以通过有限差分或自动微分来计算
+# 3.绘制不同阶数导数的图形，给定偏微分方程的左右两侧
 # 4.在 SGA 中设置运算符和操作数
 simple_mode = True
 see_tree = None
@@ -55,6 +55,7 @@ print('random seed:{}'.format(rand))
 np.random.seed(rand)
 random.seed(rand)
 
+# 1.从Data_generator加载数据
 # load Metadata
 u = Data_generator.u
 x = Data_generator.x
@@ -148,8 +149,9 @@ if use_autograd == True:
     uxx_origin = np.reshape( uxx_origin, (n_origin,m_origin))
     uxxx_origin = np.reshape( uxxx_origin, (n_origin,m_origin))
 
+# 2.评估偏微分方程与观测值之间的适应度（计算偏微分方程左侧和右侧之间的误差）。偏微分方程中涉及的导数可以通过有限差分或自动微分来计算
 # calculate error
-exec (config.right_side)
+exec (config.right_side)  # config.right_side为一个字符串，exec是执行这个字符串，目的是固定方程的左右两侧
 exec (config.left_side)
 n1, n2, m1, m2 = int(n*0.1), int(n*0.9), int(m*0), int(m*1)
 right_side_full = right_side
@@ -193,6 +195,7 @@ left_origin = np.reshape(left_side_origin, ((n2_origin-n1_origin)*(m2_origin-m1_
 diff_origin = np.linalg.norm(left_origin-right_origin, 2)/((n2_origin-n1_origin)*(m2_origin-m1_origin))
 print('data error_origin',diff_origin)
 
+# 3.绘制不同阶数导数的图形，给定偏微分方程的左右两侧
 # plot the figures
 if plot_the_figures == True:
     from matplotlib.pyplot import MultipleLocator
@@ -316,7 +319,6 @@ if plot_the_figures == True:
     plt.yticks(fontsize=15)
     plt.title('Original Residual', fontsize = 15)
     plt.savefig(config.problem + '_Original_Residual_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
-
     plt.show()
 
 

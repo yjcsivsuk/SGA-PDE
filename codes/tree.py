@@ -88,9 +88,8 @@ class Tree: #对应于pde中的一个term
         model_tree = copy.deepcopy(self.tree)
         self.inorder = tree2str_merge(model_tree)
 
-        # print(self.preorder)
-        # print(self.inorder)
-        # print('---------------')
+        # print('前序遍历:', self.preorder)
+        # print('中序遍历:', self.inorder)
 
     def mutate(self, p_mute): #直接替换原有tree中的某个节点，用同类型节点替换，因此后续位置不需要重新生成（类似替换了一个基因，而不是把后续基因序列重新产生，具有物理含义，也易于实现）
         global see_tree
@@ -149,12 +148,12 @@ class Tree: #对应于pde中的一个term
         model_tree = copy.deepcopy(self.tree)
         self.inorder = tree2str_merge(model_tree)
 
-        # print(self.preorder)
-        # print(self.inorder)
+        # print('前序遍历:', self.preorder)
+        # print('中序遍历:', self.inorder)
 
 
 def dfs(ret, a_tree, depth, idx): #辅助前序遍历，产生一个描述这个tree的名称序列（ret）
-    # print(depth, idx)  # 深度优先遍历的顺序
+    # print(f'depth:{depth}, idx:{idx}')  # 深度优先遍历的顺序
     node = a_tree[depth][idx]
     ret.append(node.name) # 记录当前操作
     for ix in range(node.child_num):
@@ -180,6 +179,6 @@ def tree2str_merge(a_tree):
 
 if __name__ == '__main__':
     tree = Tree(max_depth=4, p_var=0.5)
-    print(f'变异前中序遍历:', tree.inorder)
+    print('变异前中序遍历:', tree.inorder)
     tree.mutate(p_mute=1)
-    print(f'变异后中序遍历:', tree.inorder)
+    print('变异后中序遍历:', tree.inorder)

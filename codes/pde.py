@@ -159,5 +159,5 @@ if __name__ == '__main__':
     evaluate_mse(pde)
     pde.mutate(p_mute=0.1)
     pde.replace()
-    print(f'前序遍历:', pde.elements[0].inorder)
+    print('前序遍历:', pde.elements[0].inorder)
 
