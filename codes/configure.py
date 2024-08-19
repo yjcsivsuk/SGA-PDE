@@ -18,7 +18,7 @@ else:
 ###########################################################################################
 # Neural network
 max_epoch = 100 * 1000
-path = problem+'_sine_sin_50_3fc2_'+'%d'%(max_epoch/1000)+'k_Adam.pkl'
+path = '../model/'+problem+'_sine_sin_50_3fc2_'+'%d'%(max_epoch/1000)+'k_Adam.pkl'
 hidden_dim = 50
 
 train_ratio = 1  # the ratio of training dataset

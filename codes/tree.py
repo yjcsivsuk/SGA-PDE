@@ -178,57 +178,8 @@ def tree2str_merge(a_tree):
     return a_tree[0][0].name
 
 
-# class Point:
-#     def __init__(self, idx, name, child_num, child_idx=[]):
-#         """
-#             1. idx: 当前序列的第几个节点
-#             2. parent_idx: 父节点是第几个节点
-#             3. name: 节点名称
-#             4. child_num: 节点拥有几个孩子节点
-#             5. child_idx: 孩子节点是序列的第几个
-#         """
-#         self.idx = idx
-#         self.name = name
-#         self.child_num = child_num
-#         self.child_idx = child_idx
-
-#     def __str__(self):
-#         return self.name
-
-#     def add_child(self, ix):
-#         self.child_idx.append(ix)
-
-
-# def is_an_equation(seq):  # e.g. (+ u - u u)
-#     def split(seq, idx):
-#         # last element is an op
-#         if idx >= len(seq): return np.inf
-
-#         # idx is the current node
-#         op = ALL[:, 0]
-#         root = ALL[np.where(op == seq[idx])][0]
-#         node = Point(idx=idx, name=root[0], child_num=int(root[1]))
-
-#         if node.child_num != 0:
-#             node.child_idx.append(idx + 1)  # might be wrong for the last node, not fatal though
-#             new_idx = split(seq, idx + 1)  # first child
-#             if node.child_num != 1:  # other children
-#                 node.child_idx.append(new_idx)
-#                 new_idx = split(seq, new_idx)
-#             return new_idx
-
-#         return idx + 1
-
-#     idx = 0
-#     end_idx = split(seq, idx)
-#     if end_idx != len(seq):
-#         return False
-#     return True
-
-
 if __name__ == '__main__':
     tree = Tree(max_depth=4, p_var=0.5)
-    print(f'前序遍历:', tree.inorder)
+    print(f'变异前中序遍历:', tree.inorder)
     tree.mutate(p_mute=1)
-    print(f'中序遍历:', tree.inorder)
-
+    print(f'变异后中序遍历:', tree.inorder)
