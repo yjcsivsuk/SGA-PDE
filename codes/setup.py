@@ -21,7 +21,7 @@ from configure import divide
 # 4.在 SGA 中设置运算符和操作数
 simple_mode = True
 see_tree = None
-plot_the_figures = False
+plot_the_figures = True
 use_metadata = False
 use_difference = True
 
