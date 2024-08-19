@@ -16,12 +16,12 @@ import configure as config
 from configure import divide
 
 # 1.从Data_generator加载数据
-# 2.评估偏微分方程与观测值之间的适应度（计算偏微分方程左侧和右侧之间的误差）。偏微分方程中涉及的梯度可以通过有限差分或自评分来计算
+# 2.评估偏微分方程与观测值之间的适应度（计算偏微分方程左侧和右侧之间的误差）。偏微分方程中涉及的梯度可以通过有限差分或自动微分来计算
 # 3.绘制不同阶数梯度的图形，给定偏微分方程的左右两侧
 # 4.在 SGA 中设置运算符和操作数
 simple_mode = True
 see_tree = None
-plot_the_figures = True
+plot_the_figures = False
 use_metadata = False
 use_difference = True
 
@@ -348,15 +348,15 @@ if simple_mode:
 
     ALL = np.array([['+', 2, np.add], ['-', 2, np.subtract],['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2], 
                     ['u', 0, u], ['x', 0, x], ['ux', 0, ux],  ['0', 0, zeros],
-                    ['^2', 1, np.square], ['^3', 1, cubic]]) #  ['u^2', 0, u**2], ['uxx', 0, uxx], ['t', 0, t],
+                    ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object) #  ['u^2', 0, u**2], ['uxx', 0, uxx], ['t', 0, t],
     OPS = np.array([['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, divide],
-                    ['d', 2, Diff], ['d^2', 2, Diff2], ['^2', 1, np.square], ['^3', 1, cubic]])
-    ROOT = np.array([['*', 2, np.multiply], ['d', 2, Diff], ['d^2', 2, Diff2], ['/', 2, divide], ['^2', 1, np.square], ['^3', 1, cubic]])
-    OP1 = np.array([['^2', 1, np.square], ['^3', 1, cubic]])
-    OP2 = np.array([['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2]])
-    # VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux], ['uxx', 0, uxx], ['u^2', 0, u**2]]) 
-    VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux]])
-    den = np.array([['x', 0, x]])
+                    ['d', 2, Diff], ['d^2', 2, Diff2], ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)
+    ROOT = np.array([['*', 2, np.multiply], ['d', 2, Diff], ['d^2', 2, Diff2], ['/', 2, divide], ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)
+    OP1 = np.array([['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)
+    OP2 = np.array([['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2]], dtype=object)
+    # VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux], ['uxx', 0, uxx], ['u^2', 0, u**2]], dtype=object) 
+    VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux]], dtype=object)
+    den = np.array([['x', 0, x]], dtype=object)
 
 # else:
 #     ALL = np.array([['sin', 1, np.sin], ['cos', 1, np.cos], ['log', 1, np.log], ['+', 2, np.add], ['-', 2, np.subtract],

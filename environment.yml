@@ -71,7 +71,7 @@ dependencies:
   - ncurses=6.5=hb89a1cb_0
   - networkx=3.3=pyhd8ed1ab_1
   - nomkl=1.0=h5ca1d4c_0
-  - numpy=2.0.1=py311h4268184_0
+  - numpy=1.23.5=py311ha92fb03_0
   - openjpeg=2.5.2=h9f1df11_0
   - openssl=3.3.1=hfb2fe0b_2
   - packaging=24.1=pyhd8ed1ab_0
