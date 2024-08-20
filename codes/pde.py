@@ -15,7 +15,7 @@ class PDE:
         """
         self.depth = depth
         self.p_var = p_var
-        self.W = np.random.randint(max_width)+1  # 1 -- width
+        self.W = np.random.randint(max_width) + 1  # 1 -- width
         self.elements = []  # 即候选集，用于保存PDE中的每一项，之后查看得到的PDE形式时也要打印出elements
         for i in range(0, self.W):
             # 产生W个tree，也就是W个项
