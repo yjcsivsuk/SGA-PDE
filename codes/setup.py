@@ -21,8 +21,8 @@ from configure import divide
 # 4.在 SGA 中设置运算符和操作数
 simple_mode = True
 see_tree = None
-plot_the_figures = True
-use_metadata = False
+plot_the_figures = False
+use_metadata = False 
 use_difference = True
 
 if use_difference == True:
@@ -65,9 +65,9 @@ n, m = u.shape
 dx = x[2]-x[1]
 dt = t[1]-t[0]
 # 扩充维度使得与u的size相同
-x = np.tile(x, (m, 1)).transpose((1, 0))
-x_all = np.tile(x_all, (m, 1)).transpose((1, 0))
-t = np.tile(t, (n, 1))
+x = np.tile(x, (m, 1)).transpose((1, 0))  # (n,m) (256,201)
+x_all = np.tile(x_all, (m, 1)).transpose((1, 0))  # (n,m) (256,201)
+t = np.tile(t, (n, 1))  # (n,m) (256,201)
 
 # load Origin data
 u_origin=config.u
@@ -151,8 +151,10 @@ if use_autograd == True:
 
 # 2.评估偏微分方程与观测值之间的适应度（计算偏微分方程左侧和右侧之间的误差）。偏微分方程中涉及的导数可以通过有限差分或自动微分来计算
 # calculate error
-exec (config.right_side)  # config.right_side为一个字符串，exec是执行这个字符串，目的是固定方程的左右两侧
-exec (config.left_side)
+# config.right_side为一个字符串，exec是执行这个字符串，目的是固定方程的左右两侧
+# 如果use_metadata = True，那么error和error_origin相同
+exec (config.right_side)  # right_side = -config.divide(ux, x) + 0.25*uxx
+exec (config.left_side)  # left_side = ut
 n1, n2, m1, m2 = int(n*0.1), int(n*0.9), int(m*0), int(m*1)
 right_side_full = right_side
 right_side = right_side[n1:n2, m1:m2]
@@ -162,8 +164,8 @@ left = np.reshape(left_side, ((n2-n1)*(m2-m1), 1))
 diff = np.linalg.norm(left-right, 2)/((n2-n1)*(m2-m1))
 print('data error without edges',diff)
 
-exec (config.right_side_origin)
-exec (config.left_side_origin)
+exec (config.right_side_origin)  # right_side_origin = -config.divide(ux_origin, x_all) + 0.25*uxx_origin
+exec (config.left_side_origin)  # left_side_origin = ut_origin
 n1_origin, n2_origin, m1_origin, m2_origin = int(n_origin*0.1), int(n_origin*0.9), int(m_origin*0), int(m_origin*1)
 right_side_full_origin = right_side_origin
 right_side_origin = right_side_origin[n1_origin:n2_origin, m1_origin:m2_origin]
@@ -199,6 +201,7 @@ print('data error_origin',diff_origin)
 # plot the figures
 if plot_the_figures == True:
     from matplotlib.pyplot import MultipleLocator
+    path_prefix = 'output/setup/' + config.problem + '/'
     x1 = int(n_origin*0.1)
     x2 = int(n_origin*0.9)
     t1 = int(m_origin*0.1)
@@ -210,7 +213,7 @@ if plot_the_figures == True:
     plt.xticks(fontsize=15)
     plt.yticks(fontsize=15)
     plt.title('Metadata Field', fontsize = 15)
-    plt.savefig(config.problem + '_Metadata_field_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
+    plt.savefig(path_prefix + config.problem + '_Metadata_field_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
 
     plt.figure(figsize=(10,3))
     mm1=plt.imshow(u_origin, interpolation='nearest',  cmap='Blues', origin='lower', vmax=np.max(u_origin), vmin=np.min(u_origin))
@@ -218,7 +221,7 @@ if plot_the_figures == True:
     plt.xticks(fontsize=15)
     plt.yticks(fontsize=15)
     plt.title('Original Field', fontsize = 15)
-    plt.savefig(config.problem + '_Original_field_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
+    plt.savefig(path_prefix + config.problem + '_Original_field_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
 
     # Plot the PDE terms
     fig=plt.figure(figsize=(5,3))
@@ -227,7 +230,7 @@ if plot_the_figures == True:
     x_index_fine = np.linspace(0,100, n)
     if use_metadata == True:
         plt.plot(x_index_fine, ut[:,int(m/2)], color='red', label = 'Metadata')
-    plt.plot(x_index, ut_origin[:,int(m_origin/2)], color='blue', linestyle='--') #, label = 'Raw data'
+    plt.plot(x_index, ut_origin[:,int(m_origin/2)], color='blue', linestyle='--') #, label = 'Raw data' # 中间时刻的ut
     # plt.ylim(np.min(ut_origin[x1:x2,t1:t2]), np.max(ut_origin[x1:x2,t1:t2]))
     # plt.title('$U_t$ (Left side)')
     ax.set_ylabel('$U_t$', fontsize=18)
@@ -236,7 +239,7 @@ if plot_the_figures == True:
     x_major_locator=MultipleLocator(32)
     ax=plt.gca()
     ax.xaxis.set_major_locator(x_major_locator)
-    plt.savefig(config.problem + '_Ut_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight') 
+    plt.savefig(path_prefix + config.problem + '_Ut_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight') 
 
     fig=plt.figure(figsize=(5,3))
     ax = fig.add_subplot(1, 1, 1)
@@ -253,7 +256,7 @@ if plot_the_figures == True:
     x_major_locator=MultipleLocator(32)
     ax=plt.gca()
     ax.xaxis.set_major_locator(x_major_locator)
-    plt.savefig(config.problem + '_Ux_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight') 
+    plt.savefig(path_prefix + config.problem + '_Ux_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight') 
 
     fig=plt.figure(figsize=(5,3))
     ax = fig.add_subplot(1, 1, 1)
@@ -267,7 +270,7 @@ if plot_the_figures == True:
     ax.set_ylabel('$U_x$'+'$_x$', fontsize=18)
     ax.set_xlabel('x', fontsize=18)
     plt.legend(loc='upper left')
-    plt.savefig(config.problem + '_Uxx_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight') 
+    plt.savefig(path_prefix + config.problem + '_Uxx_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight') 
 
     plt.figure(figsize=(5,3))
     x_index = np.linspace(0,100, n_origin)
@@ -278,7 +281,7 @@ if plot_the_figures == True:
     # plt.ylim(np.min(u_origin[x1:x2,t1:t2]), np.max(u_origin[x1:x2,t1:t2]))
     plt.title('U')
     plt.legend(loc='upper left')
-    plt.savefig(config.problem + '_U_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
+    plt.savefig(path_prefix + config.problem + '_U_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
 
     plt.figure(figsize=(5,3))
     x_index = np.linspace(0,100, (n2_origin-n1_origin))
@@ -289,7 +292,7 @@ if plot_the_figures == True:
     # plt.ylim(np.min(right_side_origin[x1:x2,t1:t2]), np.max(right_side_origin[x1:x2,t1:t2]))
     plt.title('Right side')
     plt.legend(loc='upper left')
-    plt.savefig(config.problem + '_Right_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
+    plt.savefig(path_prefix + config.problem + '_Right_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
 
     plt.figure(figsize=(5,3))
     x_index = np.linspace(0,100, n_origin)
@@ -300,7 +303,7 @@ if plot_the_figures == True:
     # plt.ylim(np.min(ut_origin[x1:x2,t1:t2]), np.max(ut_origin[x1:x2,t1:t2]))
     plt.title('Residual')
     plt.legend(loc='upper left')
-    plt.savefig(config.problem + '_Residual_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
+    plt.savefig(path_prefix + config.problem + '_Residual_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
 
     plt.figure(figsize=(10,3))
     mm1=plt.imshow((ut-right_side_full), interpolation='nearest',  cmap='Blues', origin='lower', vmax=np.max((ut_origin-right_side_full_origin)), vmin=np.min((ut_origin-right_side_full_origin)))
@@ -309,7 +312,7 @@ if plot_the_figures == True:
     plt.xticks(fontsize=15)
     plt.yticks(fontsize=15)
     plt.title('Metadata Residual', fontsize = 15)
-    plt.savefig(config.problem + '_Metadata_Residual_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
+    plt.savefig(path_prefix + config.problem + '_Metadata_Residual_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
 
     plt.figure(figsize=(10,3))
     mm1=plt.imshow((ut_origin-right_side_full_origin), interpolation='nearest',  cmap='Blues', origin='lower', vmax=np.max((ut_origin-right_side_full_origin)), vmin=np.min((ut_origin-right_side_full_origin)))
@@ -318,26 +321,29 @@ if plot_the_figures == True:
     plt.xticks(fontsize=15)
     plt.yticks(fontsize=15)
     plt.title('Original Residual', fontsize = 15)
-    plt.savefig(config.problem + '_Original_Residual_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
-    plt.show()
+    plt.savefig(path_prefix + config.problem + '_Original_Residual_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
 
 
 ###########################################################################################
 # for default evaluation
+# 把数据集中的数据重塑shape为(nxm,1) 
 default_u = np.reshape(u, (u.shape[0]*u.shape[1], 1))
 default_ux = np.reshape(ux, (u.shape[0]*u.shape[1], 1))
 default_uxx = np.reshape(uxx, (u.shape[0]*u.shape[1], 1))
 # default_uxxx = np.reshape(uxxx, (u.shape[0]*u.shape[1], 1))
 default_u2 = np.reshape(u**2, (u.shape[0]*u.shape[1], 1))
 default_u3 = np.reshape(u**3, (u.shape[0]*u.shape[1], 1))
-# default_terms = np.hstack((default_u, default_ux, default_uxx, default_u2, default_u3))
-# default_names = ['u', 'ux', 'uxx', 'u^2', 'u^3']
+# 设置默认项，需要按情况修改
+default_terms = np.hstack((default_u, default_ux, default_uxx, default_u2, default_u3))
+default_names = ['u', 'ux', 'uxx', 'u^2', 'u^3']
 # default_terms = np.hstack((default_u, default_ux))
 # default_names = ['u', 'ux']
-default_terms = np.hstack((default_u)).reshape(-1,1)
-default_names = ['u']
-print(default_terms.shape)
-num_default = default_terms.shape[1]
+# default_terms = np.hstack((default_u)).reshape(-1,1)
+# default_names = ['u']
+
+print("默认项shape:", default_terms.shape)
+num_default = default_terms.shape[1]  # 包含的默认项的数量，num_default中为一定包含的候选集
+print("默认项数量num_default:", num_default)
 
 zeros = np.zeros(u.shape)
 

@@ -11,7 +11,7 @@ class PDE:
         self.depth = depth
         self.p_var = p_var
         self.W = np.random.randint(max_width)+1  # 1 -- width
-        self.elements = []
+        self.elements = []  # 即候选集，用于保存PDE中的每一项，之后查看得到的PDE形式时也要打印出elements
         for i in range(0, self.W):
             # 产生W个tree，也就是W个项
             one_tree = Tree(depth, p_var)
@@ -157,7 +157,9 @@ def evaluate_mse(a_pde, is_term=False):
 if __name__ == '__main__':
     pde = PDE(depth=4, max_width=3, p_var=0.5)
     evaluate_mse(pde)
-    pde.mutate(p_mute=0.1)
+    pde.mutate(p_mute=0.2)
     pde.replace()
-    print('前序遍历:', pde.elements[0].inorder)
+    # 存在问题，两种可视化的结果不一样
+    print("中序遍历", pde.visualize())
+    print("带系数的中序遍历", pde.concise_visualize())
 

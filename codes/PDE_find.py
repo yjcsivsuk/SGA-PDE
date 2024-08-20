@@ -182,6 +182,7 @@ def STRidge(X0, y, lam, maxit, tol, normalize=0, print_results=False):
     n, d = X0.shape
     X = np.zeros((n, d))
     # First normalize data
+    # 根据情况是否标准化矩阵
     if normalize != 0:
         Mreg = np.zeros((d, 1))
         for i in range(0, d):
@@ -190,16 +191,18 @@ def STRidge(X0, y, lam, maxit, tol, normalize=0, print_results=False):
     else:
         X = X0
     # Get the standard ridge estimate
+    # 如果lam不为0，则添加正则化项
     if lam != 0:
         w = np.linalg.lstsq(X.T.dot(X) + lam * np.eye(d), X.T.dot(y))[0]
     else:
         w = np.linalg.lstsq(X, y)[0]
-    num_relevant = d
-    biginds = np.where(abs(w) > tol)[0]
+    num_relevant = d  # 当前重要的特征数量
+    biginds = np.where(abs(w) > tol)[0]  # 权重系数绝对值大于 tol 的特征索引
     # Threshold and continue
+    # 通过迭代减少不重要特征的权重，直到没有更多的特征被剔除或达到最大迭代次数
     for j in range(maxit):
         # Figure out which items to cut out
-        smallinds = np.where(abs(w) < tol)[0]
+        smallinds = np.where(abs(w) < tol)[0]  # 权重系数绝对值小于 tol 的特征索引
         new_biginds = [i for i in range(d) if i not in smallinds]
         # If nothing changes then stop
         if num_relevant == len(new_biginds):
@@ -215,14 +218,17 @@ def STRidge(X0, y, lam, maxit, tol, normalize=0, print_results=False):
                 break
         biginds = new_biginds
         # Otherwise get a new guess
-        w[smallinds] = 0
+        w[smallinds] = 0  # 将权重系数绝对值小于 tol 的特征系数置0
+        # 在置完0后，还需要重新计算剩下的权重
         if lam != 0:
             w[biginds] = np.linalg.lstsq(X[:, biginds].T.dot(X[:, biginds]) + lam * np.eye(len(biginds)), X[:, biginds].T.dot(y))[0]
         else:
             w[biginds] = np.linalg.lstsq(X[:, biginds], y)[0]
     # Now that we have the sparsity pattern, use standard least squares to get w
+    # 在迭代完成后，使用标准最小二乘法重新计算重要特征的权重
     if biginds != []: 
         w[biginds] = np.linalg.lstsq(X[:, biginds], y)[0]
+    # 如果数据进行了标准化，则返回的权重系数需要乘以标准化系数 Mreg 。否则，直接返回计算得到的权重系数 w
     if normalize != 0:
         return np.multiply(Mreg, w)
     else:
