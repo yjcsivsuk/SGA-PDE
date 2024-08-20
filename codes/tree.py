@@ -19,7 +19,6 @@ class Node:
         self.depth = depth
         self.idx = idx
         self.parent_idx = parent_idx
-
         self.name = name
         self.child_num = child_num
         self.child_st = child_st
@@ -34,23 +33,26 @@ class Node:
     def reset_status(self): # 初始化status
         self.status = self.child_num
 
-
-class Tree: #对应于pde中的一个term
+# 一个二叉树对应于pde中的一个term
+class Tree:
     def __init__(self, max_depth, p_var):
+        """
+            1. max_width: 树的最大深度
+            2. p_var: 树产生变量的概率
+        """
         self.max_depth = max_depth
         self.tree = [[] for i in range(max_depth)]
         self.preorder, self.inorder = None, None
 
         root = ROOT[np.random.randint(0, len(ROOT))] # 随机产生初始root（一种OPS）# e.g. ['sin', 1, np.sin], ['*', 2, np.multiply] 
-        node = Node(depth=0, idx=0, parent_idx=None, name=root[0], var=root[2], full=root,
-                    child_num=int(root[1]), child_st=0) # 设置初始节点Node
+        node = Node(depth=0, idx=0, parent_idx=None, name=root[0], var=root[2], full=root, child_num=int(root[1]), child_st=0) # 设置初始节点Node
         self.tree[0].append(node) # 初始节点
 
         depth = 1
         while depth < max_depth:
-            next_cnt = 0 #child_st=next_cnt， child_st: 下一层从第几个节点开始是当前的孩子节点
+            next_cnt = 0  # child_st = next_cnt, child_st: 下一层从第几个节点开始是当前的孩子节点
             # 对应每一个父节点都要继续生成他们的子节点
-            for parent_idx in range(len(self.tree[depth - 1])): #一个tree中某个depth处的node的子节点可以是多个，因此有可能在某个深度处存在多个node
+            for parent_idx in range(len(self.tree[depth - 1])): # 一个tree中某个depth处的node的子节点可以是多个，因此有可能在某个深度处存在多个node
                 parent = self.tree[depth - 1][parent_idx] # 提取出对应深度处的对应操作符（某个node）
                 if parent.child_num == 0: # 如果当前node没有子节点，则跳过当前循环的剩余语句，然后继续进行下一轮循环
                     continue
@@ -87,11 +89,11 @@ class Tree: #对应于pde中的一个term
         self.preorder = ' '.join([x for x in ret])
         model_tree = copy.deepcopy(self.tree)
         self.inorder = tree2str_merge(model_tree)
-
         # print('前序遍历:', self.preorder)
         # print('中序遍历:', self.inorder)
 
-    def mutate(self, p_mute): #直接替换原有tree中的某个节点，用同类型节点替换，因此后续位置不需要重新生成（类似替换了一个基因，而不是把后续基因序列重新产生，具有物理含义，也易于实现）
+    # 直接替换原有tree中的某个节点，用同类型节点替换，因此后续位置不需要重新生成（类似替换了一个基因，而不是把后续基因序列重新产生，具有物理含义，也易于实现）
+    def mutate(self, p_mute):
         global see_tree
         see_tree = copy.deepcopy(self.tree)
         depth = 1
@@ -147,21 +149,20 @@ class Tree: #对应于pde中的一个term
         self.preorder = ' '.join([x for x in ret])
         model_tree = copy.deepcopy(self.tree)
         self.inorder = tree2str_merge(model_tree)
-
         # print('前序遍历:', self.preorder)
         # print('中序遍历:', self.inorder)
 
-
-def dfs(ret, a_tree, depth, idx): #辅助前序遍历，产生一个描述这个tree的名称序列（ret）
+# dfs辅助前序遍历，产生一个描述这个tree的名称序列（ret）
+def dfs(ret, a_tree, depth, idx):
     # print(f'depth:{depth}, idx:{idx}')  # 深度优先遍历的顺序
     node = a_tree[depth][idx]
-    ret.append(node.name) # 记录当前操作
+    ret.append(node.name)  # 记录当前操作
     for ix in range(node.child_num):
         if node.child_st is None:
             continue
-        dfs(ret, a_tree, depth+1, node.child_st + ix) #进入下一层中下一个节点对应的子节点
+        dfs(ret, a_tree, depth+1, node.child_st + ix)  # 进入下一层中下一个节点对应的子节点
 
-
+# 将树的中序遍历转换为PDE的形式
 def tree2str_merge(a_tree):
     for i in range(len(a_tree) - 1, 0, -1):
         for node in a_tree[i]:
@@ -180,5 +181,5 @@ def tree2str_merge(a_tree):
 if __name__ == '__main__':
     tree = Tree(max_depth=4, p_var=0.5)
     print('变异前中序遍历:', tree.inorder)
-    tree.mutate(p_mute=1)
+    tree.mutate(p_mute=0.1)
     print('变异后中序遍历:', tree.inorder)

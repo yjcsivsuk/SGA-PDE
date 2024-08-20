@@ -8,6 +8,11 @@ warnings.filterwarnings('ignore')
 # 定义偏微分方程类。定义 evaluate_mse 函数以评估生成的偏微分方程的适应度
 class PDE:
     def __init__(self, depth, max_width, p_var):
+        """
+            1. depth: PDE对应树的深度
+            2. max_width: PDE对应树的最大深度
+            3. p_var: PDE对应树产生变量的概率
+        """
         self.depth = depth
         self.p_var = p_var
         self.W = np.random.randint(max_width)+1  # 1 -- width

@@ -4,7 +4,7 @@ import sys
 import datetime
 warnings.filterwarnings('ignore')
 
-# SGA-PDE的主要程序。定义 SGA 类。SGA-PDE中的交叉运算在 corss_over 函数中定义。SGA-PDE的突变和替换操作在 change 函数中定义
+# SGA-PDE的主要程序, 定义 SGA 类
 class Logger(object):
     def __init__(self, filename='default.log', stream=sys.stdout):
         self.terminal = stream
@@ -20,13 +20,15 @@ class Logger(object):
 
 class SGA:  # 最外层
     def __init__(self, num, depth, width, p_var, p_mute, p_rep, p_cro):
-        # num: pool里PDE的数量
-        # depth: 每个PDE的term的最大深度
-        # width: 每个PDE所含term的最大数量
-        # p_var: 生成树时节点为u/t/x而不是运算符的概率
-        # p_rep: 将（所有）pde某一项重新生成以替换原项的概率
-        # p_mute: PDE的树结构里每个节点的突变概率
-        # p_cro: 不同PDE之间交换term的概率
+        """
+            1. num: pool里PDE的数量
+            2. depth: 每个PDE的term的最大深度
+            3. width: 每个PDE所含term的最大数量
+            4. p_var: 生成树时节点为u/t/x而不是运算符的概率
+            5. p_rep: 将（所有）pde某一项重新生成以替换原项的概率
+            6. p_mute: PDE的树结构里每个节点的突变概率
+            7. p_cro: 不同PDE之间交换term的概率
+        """
         self.num = num
         self.p_mute = p_mute
         self.p_cro = p_cro
@@ -37,7 +39,8 @@ class SGA:  # 最外层
         self.repeat_cross = 0
         self.repeat_change = 0
         print('Creating the original pdes in the pool ...')
-        for i in range(num*self.ratio): # 循环产生num个pde
+        # 循环产生num个pde
+        for i in range(num * self.ratio):
             a_pde = PDE(depth, width, p_var)
             a_err, a_w = evaluate_mse(a_pde)
             pde_lib.append(a_pde)
@@ -50,8 +53,8 @@ class SGA:  # 最外层
                 pde_lib.append(a_pde)
                 err_lib.append((a_err, a_w))
             print('Creating the ith pde, i=', i)
-            print('a_pde.visualize():',a_pde.visualize())
-            print('evaluate_aic:',a_err)
+            print('a_pde.visualize():', a_pde.visualize())
+            print('evaluate_aic:', a_err)
             self.eqs.append(a_pde)
             self.mses.append(a_err)
 
@@ -80,7 +83,8 @@ class SGA:  # 最外层
         argmin = np.argmin(self.mses)
         return self.eqs[argmin], self.mses[argmin]
 
-    def cross_over(self, percentage=0.5): # 比如一代有2n个样本，先用最好的n个样本交叉，产生了m个新的不重复的样本。则最终提取了2n+m个样本中最好的2n个。
+    # 交叉操作: 比如一代有2n个样本，先用最好的n个样本交叉，产生了m个新的不重复的样本。则最终提取了2n+m个样本中最好的2n个
+    def cross_over(self, percentage=0.5):
         def cross_individual(pde1, pde2):
             new_pde1, new_pde2 = copy.deepcopy(pde1), copy.deepcopy(pde2)
             w1, w2 = len(pde1.elements), len(pde2.elements)
