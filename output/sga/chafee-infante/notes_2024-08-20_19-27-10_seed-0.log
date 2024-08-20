@@ -1,0 +1,80 @@
+sga_num =  20
+sga_depth =  4
+sga_width =  5
+sga_p_var =  0.5
+sga_p_mute =  0.3
+sga_p_cro =  0.5
+sga_run =  100
+Creating the original pdes in the pool ...
+Creating the ith pde, i= 0
+a_pde.visualize(): ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 1
+a_pde.visualize(): (x * u)+( ^2 u)+(ux d x)
+evaluate_aic: -9.746278422033278
+Creating the ith pde, i= 2
+a_pde.visualize(): ((( ^2 0) - ( ^2 ux)) d x)
+evaluate_aic: -11.746241866602773
+Creating the ith pde, i= 3
+a_pde.visualize(): (x / ux)
+evaluate_aic: -11.746241866602773
+Creating the ith pde, i= 4
+a_pde.visualize(): ( ^2 (u d x))+( ^2 ux)+( ^2 ux)+( ^3 (x + ( ^3 x)))+(((x * u) d x) * x)
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 5
+a_pde.visualize(): (ux * ux)
+evaluate_aic: -11.746241866602773
+Creating the ith pde, i= 6
+a_pde.visualize(): ( ^2 ux)+(((u / ux) d x) d x)+(u d^2 x)
+evaluate_aic: -9.8040244280905
+Creating the ith pde, i= 7
+a_pde.visualize(): ((( ^3 u) / (u * ux)) / ((x / ux) + ( ^2 u)))+( ^3 ux)+(x * ((ux - x) - (u d^2 x)))
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 8
+a_pde.visualize(): ( ^2 (ux - (u + ux)))
+evaluate_aic: -11.746241866602773
+Creating the ith pde, i= 9
+a_pde.visualize(): (( ^3 ux) d^2 x)+( ^3 ( ^3 u))
+evaluate_aic: -11.746241866602773
+Creating the ith pde, i= 10
+a_pde.visualize(): (ux / 0)
+evaluate_aic: -5.762578150896072
+Creating the ith pde, i= 11
+a_pde.visualize(): ( ^3 (u / 0))+(((x - ux) d x) / (ux * (ux d^2 x)))+(( ^3 ux) d^2 x)
+evaluate_aic: -9.74624186660278
+Creating the ith pde, i= 12
+a_pde.visualize(): ( ^2 u)+(ux d x)
+evaluate_aic: -9.746222317638136
+Creating the ith pde, i= 13
+a_pde.visualize(): (((u + ux) d^2 x) * ( ^2 (u - ux)))+( ^2 (ux d^2 x))+( ^3 ux)
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 14
+a_pde.visualize(): (((u * ux) - x) / x)+((u + 0) d x)+(((x / u) / (u + ux)) * (( ^3 u) + 0))+(x / 0)+( ^2 u)
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 15
+a_pde.visualize(): (u d^2 x)+( ^3 u)+(x d^2 x)
+evaluate_aic: -7.804024428090504
+Creating the ith pde, i= 16
+a_pde.visualize(): ( ^3 ux)+( ^2 x)+(((u / 0) d^2 x) d x)
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 17
+a_pde.visualize(): ((u - x) * (u - (ux - 0)))+(((x / x) d^2 x) d x)+(ux / ( ^3 x))
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 18
+a_pde.visualize(): (x / u)
+evaluate_aic: -11.746241866602773
+Creating the ith pde, i= 19
+a_pde.visualize(): (((ux + 0) d x) d^2 x)+( ^3 (ux / x))+( ^2 ux)+(x / x)
+evaluate_aic: -11.746241866602777
+1 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+1 generation repeat cross over 0 times and mutation 0 times
+2 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+2 generation repeat cross over 0 times and mutation 0 times
+3 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+3 generation repeat cross over 2 times and mutation 0 times
