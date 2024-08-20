@@ -175,11 +175,15 @@ if __name__ == '__main__':
     # evaluate_mse(pde)
 
     # pdb.set_trace()
+    seed = config.seed
+    torch.random.manual_seed(seed)
+    np.random.seed(seed)
+    torch.cuda.manual_seed_all(seed)
     current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    log_filename = f'output/sga/notes_{current_time}.log'
-    error_log_filename = f'output/sga/errors_{current_time}.log'
+    log_filename = f'output/sga/{config.problem}/notes_{current_time}_seed-{seed}.log'
+    # error_log_filename = f'output/sga/{config.problem}/errors_{current_time}_seed-{seed}.log'
     sys.stdout = Logger(log_filename, sys.stdout)
-    sys.stderr = Logger(error_log_filename, sys.stderr)
+    # sys.stderr = Logger(error_log_filename, sys.stderr)
     sga_num = 20
     sga_depth = 4
     sga_width = 5
