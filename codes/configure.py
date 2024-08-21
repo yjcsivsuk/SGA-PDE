@@ -64,7 +64,7 @@ def divide(up, down, eta=1e-10):
 
 # PDE_divide: ut = -ux/x + 0.25*uxx
 if problem == 'PDE_divide':
-    u=np.load("./data/PDE_divide.npy").T
+    u=np.load("./data/PDE_divide.npy").T  # (100,251)
     nx = 100
     nt = 251
     x=np.linspace(1,2,nx)
@@ -74,9 +74,9 @@ if problem == 'PDE_divide':
     right_side_origin = 'right_side_origin = -config.divide(ux_origin, x_all) + 0.25*uxx_origin'
     left_side_origin = 'left_side_origin = ut_origin'
 
-# PDE_compound: ut = d(uux)(x) = u*uxx + ux**2
+# PDE_compound: ut = d(uux)(x) = u*uxx + ux*ux
 if problem == 'PDE_compound':
-    u=np.load("./data/PDE_compound.npy").T
+    u=np.load("./data/PDE_compound.npy").T  # (100,251)
     nx = 100
     nt = 251
     x=np.linspace(1,2,nx)
@@ -88,7 +88,7 @@ if problem == 'PDE_compound':
     
 # Burgers: ut=-u*ux + 0.1*uxx
 if problem == 'Burgers':
-    data = scio.loadmat('./data/burgers.mat')
+    data = scio.loadmat('./data/burgers.mat')  # (256,201)
     u=data.get("usol")
     x=np.squeeze(data.get("x"))
     t=np.squeeze(data.get("t").reshape(1,201))
@@ -99,7 +99,7 @@ if problem == 'Burgers':
 
 # Kdv: ut = -0.0025*uxxx - uux
 if problem == 'Kdv':
-    data = scio.loadmat('./data/Kdv.mat')
+    data = scio.loadmat('./data/Kdv.mat')  # (512,201)
     u=data.get("uu")
     x=np.squeeze(data.get("x"))
     t=np.squeeze(data.get("tt").reshape(1,201))
@@ -109,8 +109,8 @@ if problem == 'Kdv':
     left_side_origin = 'left_side_origin = ut_origin'
 
 # chafee-infante: u_t = u_xx - u + u**3
-if problem == 'chafee-infante': # 301*200的新数据
-    u = np.load("./data/chafee_infante_CI.npy")
+if problem == 'chafee-infante':
+    u = np.load("./data/chafee_infante_CI.npy")  # (301,200)
     x = np.load("./data/chafee_infante_x.npy")
     t = np.load("./data/chafee_infante_t.npy") 
     right_side = 'right_side = uxx-u+u**3'
