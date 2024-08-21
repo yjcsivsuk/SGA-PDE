@@ -348,12 +348,6 @@ print("默认项数量num_default:", num_default)
 zeros = np.zeros(u.shape)
 
 if simple_mode:
-    # ALL = np.array([['sin', 1, np.sin], ['cos', 1, np.cos], ['+', 2, np.add], ['-', 2, np.subtract],
-    #                 ['*', 2, np.multiply], ['d', 2, Diff], ['u', 0, u], ['t', 0, t], ['x', 0, x]])
-    # OPS = np.array([['sin', 1, np.sin], ['cos', 1, np.cos],
-    #                 ['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['d', 2, Diff]])
-    # OP1 = np.array([['sin', 1, np.sin], ['cos', 1, np.cos]])
-
     ALL = np.array([['+', 2, np.add], ['-', 2, np.subtract],['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2], 
                     ['u', 0, u], ['x', 0, x], ['ux', 0, ux],  ['0', 0, zeros],
                     ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object) #  ['u^2', 0, u**2], ['uxx', 0, uxx], ['t', 0, t],
@@ -362,22 +356,9 @@ if simple_mode:
     ROOT = np.array([['*', 2, np.multiply], ['d', 2, Diff], ['d^2', 2, Diff2], ['/', 2, divide], ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)  # 根节点不包含+,-
     OP1 = np.array([['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)
     OP2 = np.array([['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2]], dtype=object)
-    # VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux], ['uxx', 0, uxx], ['u^2', 0, u**2]], dtype=object)  # 变量，按照情况进行修改
+    # VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux], ['uxx', 0, uxx], ['u^2', 0, u**2]], dtype=object)  # 变量，按照情况进行修改，在PDE_compound数据集中起作用
     VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux]], dtype=object)
     den = np.array([['x', 0, x]], dtype=object)
-
-# else:
-#     ALL = np.array([['sin', 1, np.sin], ['cos', 1, np.cos], ['log', 1, np.log], ['+', 2, np.add], ['-', 2, np.subtract],
-#                     ['*', 2, np.multiply], ['/', 2, np.divide], ['d', 2, Diff], ['u', 0, u], ['t', 0, t], ['x', 0, x]])
-#     OPS = np.array([['sin', 1, np.sin], ['cos', 1, np.cos], ['log', 1, np.log],
-#                     ['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, np.divide],
-#                     ['d', 2, Diff]])
-#     ROOT = np.array([['*', 2, np.multiply], ['d', 2, Diff]])
-#     OP1 = np.array([['sin', 1, np.sin], ['cos', 1, np.cos], ['log', 1, np.log]])
-#     OP2 = np.array(
-#         [['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, np.divide], ['d', 2, Diff]])
-#     VARS = np.array([['u', 0, u], ['t', 0, t], ['x', 0, x]])
-#     den = np.array([['t', 0, t], ['x', 0, x]])
 
 pde_lib, err_lib = [], []
 

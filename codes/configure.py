@@ -86,7 +86,6 @@ if problem == 'PDE_compound':
     right_side_origin = 'right_side_origin = u_origin*uxx_origin + ux_origin*ux_origin'
     left_side_origin = 'left_side_origin = ut_origin'
     
-    
 # Burgers: ut=-u*ux + 0.1*uxx
 if problem == 'Burgers':
     data = scio.loadmat('./data/burgers.mat')
