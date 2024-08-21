@@ -1,0 +1,247 @@
+sga_num =  20
+sga_depth =  4
+sga_width =  5
+sga_p_var =  0.5
+sga_p_mute =  0.3
+sga_p_cro =  0.5
+sga_run =  100
+Creating the original pdes in the pool ...
+Creating the ith pde, i= 0
+a_pde.visualize(): ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 1
+a_pde.visualize(): (x * u)+( ^2 u)+(ux d x)
+evaluate_aic: -9.746278422033278
+Creating the ith pde, i= 2
+a_pde.visualize(): ((( ^2 0) - ( ^2 ux)) d x)
+evaluate_aic: -11.746241866602773
+Creating the ith pde, i= 3
+a_pde.visualize(): (x / ux)
+evaluate_aic: -11.746241866602773
+Creating the ith pde, i= 4
+a_pde.visualize(): ( ^2 (u d x))+( ^2 ux)+( ^2 ux)+( ^3 (x + ( ^3 x)))+(((x * u) d x) * x)
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 5
+a_pde.visualize(): (ux * ux)
+evaluate_aic: -11.746241866602773
+Creating the ith pde, i= 6
+a_pde.visualize(): ( ^2 ux)+(((u / ux) d x) d x)+(u d^2 x)
+evaluate_aic: -9.8040244280905
+Creating the ith pde, i= 7
+a_pde.visualize(): ((( ^3 u) / (u * ux)) / ((x / ux) + ( ^2 u)))+( ^3 ux)+(x * ((ux - x) - (u d^2 x)))
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 8
+a_pde.visualize(): ( ^2 (ux - (u + ux)))
+evaluate_aic: -11.746241866602773
+Creating the ith pde, i= 9
+a_pde.visualize(): (( ^3 ux) d^2 x)+( ^3 ( ^3 u))
+evaluate_aic: -11.746241866602773
+Creating the ith pde, i= 10
+a_pde.visualize(): (ux / 0)
+evaluate_aic: -5.762578150896072
+Creating the ith pde, i= 11
+a_pde.visualize(): ( ^3 (u / 0))+(((x - ux) d x) / (ux * (ux d^2 x)))+(( ^3 ux) d^2 x)
+evaluate_aic: -9.74624186660278
+Creating the ith pde, i= 12
+a_pde.visualize(): ( ^2 u)+(ux d x)
+evaluate_aic: -9.746222317638136
+Creating the ith pde, i= 13
+a_pde.visualize(): (((u + ux) d^2 x) * ( ^2 (u - ux)))+( ^2 (ux d^2 x))+( ^3 ux)
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 14
+a_pde.visualize(): (((u * ux) - x) / x)+((u + 0) d x)+(((x / u) / (u + ux)) * (( ^3 u) + 0))+(x / 0)+( ^2 u)
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 15
+a_pde.visualize(): (u d^2 x)+( ^3 u)+(x d^2 x)
+evaluate_aic: -7.804024428090504
+Creating the ith pde, i= 16
+a_pde.visualize(): ( ^3 ux)+( ^2 x)+(((u / 0) d^2 x) d x)
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 17
+a_pde.visualize(): ((u - x) * (u - (ux - 0)))+(((x / x) d^2 x) d x)+(ux / ( ^3 x))
+evaluate_aic: -11.746241866602777
+Creating the ith pde, i= 18
+a_pde.visualize(): (x / u)
+evaluate_aic: -11.746241866602773
+Creating the ith pde, i= 19
+a_pde.visualize(): (((ux + 0) d x) d^2 x)+( ^3 (ux / x))+( ^2 ux)+(x / x)
+evaluate_aic: -11.746241866602777
+1 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+1 generation repeat cross over 0 times and mutation 0 times
+2 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+2 generation repeat cross over 0 times and mutation 0 times
+3 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+3 generation repeat cross over 2 times and mutation 0 times
+4 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+4 generation repeat cross over 1 times and mutation 0 times
+5 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+5 generation repeat cross over 1 times and mutation 0 times
+6 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+6 generation repeat cross over 0 times and mutation 0 times
+7 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+7 generation repeat cross over 0 times and mutation 0 times
+8 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+8 generation repeat cross over 2 times and mutation 0 times
+9 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+9 generation repeat cross over 3 times and mutation 0 times
+10 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+10 generation repeat cross over 0 times and mutation 0 times
+11 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+11 generation repeat cross over 4 times and mutation 0 times
+12 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+12 generation repeat cross over 2 times and mutation 0 times
+13 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+13 generation repeat cross over 2 times and mutation 0 times
+14 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+14 generation repeat cross over 3 times and mutation 1 times
+15 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+15 generation repeat cross over 0 times and mutation 0 times
+16 generation best_aic & best Eq: -11.746241866602777, ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+best concise Eq: -1.0002u + 1.0006uxx + 1.0004u^3
+We are close to the answer, pay attention
+16 generation repeat cross over 0 times and mutation 0 times
+17 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+17 generation repeat cross over 1 times and mutation 0 times
+18 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+18 generation repeat cross over 0 times and mutation 0 times
+19 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+19 generation repeat cross over 4 times and mutation 0 times
+20 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+20 generation repeat cross over 4 times and mutation 0 times
+21 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+21 generation repeat cross over 11 times and mutation 0 times
+22 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+22 generation repeat cross over 5 times and mutation 0 times
+23 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+23 generation repeat cross over 11 times and mutation 0 times
+24 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+24 generation repeat cross over 7 times and mutation 0 times
+25 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+25 generation repeat cross over 11 times and mutation 0 times
+26 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+26 generation repeat cross over 12 times and mutation 0 times
+27 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+27 generation repeat cross over 17 times and mutation 0 times
+28 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+28 generation repeat cross over 12 times and mutation 0 times
+29 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+29 generation repeat cross over 13 times and mutation 0 times
+30 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+30 generation repeat cross over 16 times and mutation 0 times
+31 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+31 generation repeat cross over 14 times and mutation 0 times
+32 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+32 generation repeat cross over 13 times and mutation 0 times
+33 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+33 generation repeat cross over 14 times and mutation 0 times
+34 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+34 generation repeat cross over 14 times and mutation 0 times
+35 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+35 generation repeat cross over 13 times and mutation 0 times
+36 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+36 generation repeat cross over 16 times and mutation 0 times
+37 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+37 generation repeat cross over 11 times and mutation 0 times
+38 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+38 generation repeat cross over 11 times and mutation 0 times
+39 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+39 generation repeat cross over 17 times and mutation 0 times
+40 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+40 generation repeat cross over 10 times and mutation 0 times
+41 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+41 generation repeat cross over 13 times and mutation 0 times
+42 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+42 generation repeat cross over 13 times and mutation 0 times
+43 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+43 generation repeat cross over 12 times and mutation 0 times
+44 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
+44 generation repeat cross over 10 times and mutation 0 times
+45 generation best_aic & best Eq: -11.804011775481055, ( ^2 (x d x))+( ^2 ux)+(((ux * u) / (u d x)) d^2 x)+((( ^2 u) - ux) d^2 x)
+best concise Eq: -1.0008u + 1.0004u^3 + 1.0002(((ux * u) / (u d x)) d^2 x)
+We are close to the answer, pay attention
