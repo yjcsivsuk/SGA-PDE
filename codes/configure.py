@@ -6,7 +6,7 @@ import torch.nn as nn
 
 # 选择实验数据集
 problem = 'PDE_compound' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound'
-seed = 4
+seed = 0
 device = None
 if torch.cuda.is_available():
     device = torch.device('cuda:0')
