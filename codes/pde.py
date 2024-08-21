@@ -16,7 +16,7 @@ class PDE:
         self.depth = depth
         self.p_var = p_var
         self.W = np.random.randint(max_width) + 1  # 1 -- width
-        self.elements = []  # 即候选集，用于保存PDE中的每一项，之后查看得到的PDE形式时也要打印出elements
+        self.elements = []  # 即候选集，用于保存PDE中的每一项，之后查看得到的PDE形式时也要打印出elements，跟下面的terms_value也有关
         for i in range(0, self.W):
             # 产生W个tree，也就是W个项
             one_tree = Tree(depth, p_var)
@@ -68,7 +68,7 @@ def evaluate_mse(a_pde, is_term=False):
         terms = a_pde
     else:
         terms = a_pde.elements
-    terms_values = np.zeros((u.shape[0] * u.shape[1], len(terms)))
+    terms_values = np.zeros((u.shape[0] * u.shape[1], len(terms)))  # len(terms)是a_pde.elements候选集的大小，猜测是二叉树中有几个结点
     delete_ix = []
     for ix, term in enumerate(terms):
         tree_list = term.tree

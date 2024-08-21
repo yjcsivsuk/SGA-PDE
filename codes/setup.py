@@ -1,16 +1,10 @@
 import numpy as np
 from PDE_find import Diff, Diff2, FiniteDiff
 import Data_generator as Data_generator
-import scipy.io as scio
 from requests import get
-from inspect import isfunction
-import math
-import pdb
 import random
 import matplotlib.pyplot as plt
-import torch.nn as nn
 import torch
-from torch.nn import Linear,Tanh,Sequential
 from torch.autograd import Variable
 import configure as config
 from configure import divide

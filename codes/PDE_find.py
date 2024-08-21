@@ -107,10 +107,10 @@ def Train(R, Ut, lam, d_tol, AIC_ratio=1, maxit=10, STR_iters=10, l0_penalty=1, 
 
     #train = np.random.choice(n, int(n * split), replace=False)
     #test = [i for i in np.arange(n) if i not in train]
-    TrainR = R  #[train, :]
-    TestR = R  #[test, :]
-    TrainY = Ut  #[train, :]
-    TestY = Ut  #[test, :]
+    TrainR = R  # [train, :]
+    TestR = R  # [test, :]
+    TrainY = Ut  # [train, :]
+    TestY = Ut  # [test, :]
     D = TrainR.shape[1]
 
     # Set up the initial tolerance and l0 penalty

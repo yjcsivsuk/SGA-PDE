@@ -46,7 +46,7 @@ class SGA:  # 最外层
             pde_lib.append(a_pde)
             err_lib.append((a_err, a_w))
             while a_err < -100 or a_err == np.inf:  # MSE太小则直接去除，to avoid u d t
-                print(a_err)
+                print('a_err: {} 太小!'.format(a_err))
                 a_pde = PDE(depth, width, p_var)
                 a_err, a_w = evaluate_mse(a_pde)
                 pde_lib.append(a_pde)
