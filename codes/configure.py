@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 
 # 选择实验数据集
-problem = 'Burgers' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound'
+problem = 'PDE_compound' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound'
 seed = 1
 device = None
 if torch.cuda.is_available():
@@ -61,7 +61,8 @@ def divide(up, down, eta=1e-10):
     while np.any(down == 0):
         down += eta
     return up/down
-# PDE-1: Ut= -Ux/x + 0.25Uxx
+
+# PDE_divide: ut= -ux/x + 0.25uxx
 if problem == 'PDE_divide':
     u=np.load("./data/PDE_divide.npy").T
     nx = 100
@@ -73,7 +74,7 @@ if problem == 'PDE_divide':
     right_side_origin = 'right_side_origin = -config.divide(ux_origin, x_all) + 0.25*uxx_origin'
     left_side_origin = 'left_side_origin = ut_origin'
 
-# PDE-3: Ut= d(uux)(x)
+# PDE_compound: ut= d(uux)(x)
 if problem == 'PDE_compound':
     u=np.load("./data/PDE_compound.npy").T
     nx = 100
@@ -86,7 +87,7 @@ if problem == 'PDE_compound':
     left_side_origin = 'left_side_origin = ut_origin'
     
     
-# Burgers -u*ux+0.1*uxx
+# Burgers: -u*ux+0.1*uxx
 if problem == 'Burgers':
     data = scio.loadmat('./data/burgers.mat')
     u=data.get("usol")
@@ -97,7 +98,7 @@ if problem == 'Burgers':
     right_side_origin = 'right_side_origin = -1*u_origin*ux_origin+0.1*uxx_origin'
     left_side_origin = 'left_side_origin = ut_origin'
 
-# # Kdv -0.0025uxxx-uux
+# Kdv: -0.0025uxxx-uux
 if problem == 'Kdv':
     data = scio.loadmat('./data/Kdv.mat')
     u=data.get("uu")
@@ -108,7 +109,7 @@ if problem == 'Kdv':
     right_side_origin = 'right_side_origin = -0.0025*uxxx_origin-u_origin*ux_origin'
     left_side_origin = 'left_side_origin = ut_origin'
 
-# chafee-infante   u_t=u_xx-u+u**3
+# chafee-infante: u_t=u_xx-u+u**3
 if problem == 'chafee-infante': # 301*200的新数据
     u = np.load("./data/chafee_infante_CI.npy")
     x = np.load("./data/chafee_infante_x.npy")
