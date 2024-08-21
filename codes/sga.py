@@ -45,7 +45,6 @@ class SGA:  # 最外层
             a_err, a_w = evaluate_mse(a_pde)
             pde_lib.append(a_pde)
             err_lib.append((a_err, a_w))
-            # while a_err < 0.01 or a_err == np.inf:  # MSE太小则直接去除，to avoid u d t
             while a_err < -100 or a_err == np.inf:  # MSE太小则直接去除，to avoid u d t
                 print(a_err)
                 a_pde = PDE(depth, width, p_var)
@@ -63,8 +62,6 @@ class SGA:  # 最外层
         for i, ix in enumerate(sorted_indices):
             self.mses[i], self.eqs[i] = new_mse[ix], new_eqs[ix]
         self.mses, self.eqs = self.mses[0:num], self.eqs[0:num]
-
-        # pdb.set_trace()
 
     def run(self, gen=100):
         for i in range(1, gen+1):

@@ -61,6 +61,7 @@ def model_NN(x_train, y_train, num_feature):
     y_pred_train = model(x)
     y_pred_train = y_pred_train.cpu().data.numpy().flatten()
     return y_pred_train, model
+
 # 划分数据集  
 data_num = Y.shape[0]
 total_ID = list(range(0,data_num))
@@ -74,6 +75,7 @@ def split(full_list,shuffle=False,ratio=0.2):
     sublist_1 = full_list[:offset]
     sublist_2 = full_list[offset:]
     return sublist_1,sublist_2
+
 train_index, test_index = split(total_ID, shuffle=True, ratio = train_ratio)
 x_train, x_test, y_train, y_test = X.iloc[train_index], X.iloc[test_index], Y.iloc[train_index], Y.iloc[test_index]
 print('index shape:')
@@ -82,7 +84,6 @@ print(np.shape(test_index))
 # 建模
 y_pred_train, model = model_NN(x_train, y_train, num_feature)
 torch.save(model.state_dict(), config.path) 
-
 # 进行预测
 x_test, y_test = Variable(torch.from_numpy(x_test.values).float()).to(device), Variable(torch.from_numpy(y_test.values).float().to(device))
 y_pred = model(x_test)
@@ -90,15 +91,16 @@ x_test, y_test = x_test.cpu().data.numpy().flatten(), y_test.cpu().data.numpy().
 y_pred, y_pred_train = y_pred.cpu().data.numpy().flatten(), y_pred_train
 # print('The rmse of prediction is:', mean_squared_error(y_test, y_pred) ** 0.5)
 print('The rmse of training is:', mean_squared_error(y_train, y_pred_train) ** 0.5)
-
 y_pred = y_pred.reshape(-1,1)
 print('y_pred:',np.shape(y_pred))
+
 # eval
 def R2(y_test, y_pred):
     SSE = np.sum((y_test - y_pred)**2)          # 残差平方和
     SST = np.sum((y_test-np.mean(y_test))**2) #总体平方和
     R_square = 1 - SSE/SST # 相关性系数R^2
     return R_square
+
 def eval_result (y_test, y_pred, y_train, y_pred_train):
     # eval
     print('Evaluating model performance...')
@@ -122,8 +124,8 @@ def eval_result (y_test, y_pred, y_train, y_pred_train):
     print('The R2 is:', R_square)
     print('The R2 of training dataset is:', R_square_train)
     return RMSE, RMSE_train, R_square, R_square_train
+
 RMSE, RMSE_train, R_square, R_square_train = eval_result (y_test, y_pred, y_train, y_pred_train)
 result_test_real = y_test*Y_raw.std()[0]+Y_raw.mean()[0]
 result_pred_real = y_pred*Y_raw.std()[0]+Y_raw.mean()[0]
-
 print('Neural network generated')

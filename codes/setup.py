@@ -35,11 +35,6 @@ else:
 def cubic(inputs):
     return np.power(inputs, 3)
 
-# def divide(up, down, eta=1e-10):
-#     while np.any(down == 0):
-#         down += eta
-#     return up/down
-
 def get_random_int(max_int):
     random_result = get('https://www.random.org/integers/?num=1&min=0&max={0}&col=1&base=10&format=plain&rnd=new'.format(max_int)).content
     try:
@@ -50,7 +45,7 @@ def get_random_int(max_int):
 
 # rand = get_random_int(1e6)
 rand = config.seed #0
-print('random seed:{}'.format(rand))
+print('random seed: {}'.format(rand))
 # 237204
 np.random.seed(rand)
 random.seed(rand)

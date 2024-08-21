@@ -20,7 +20,7 @@ class PDE:
         for i in range(0, self.W):
             # 产生W个tree，也就是W个项
             one_tree = Tree(depth, p_var)
-            # while 'd u t' in tree.preorder:# 没用，挡不住如(sin x + u) d t；不如直接看mse，太小就扔掉
+            # while 'd u t' in tree.preorder: # 没用，挡不住如(sin x + u) d t；不如直接看mse，太小就扔掉
             #     tree = Tree(depth, p_var)
             self.elements.append(one_tree)
 

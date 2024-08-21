@@ -107,10 +107,10 @@ def Train(R, Ut, lam, d_tol, AIC_ratio=1, maxit=10, STR_iters=10, l0_penalty=1, 
 
     #train = np.random.choice(n, int(n * split), replace=False)
     #test = [i for i in np.arange(n) if i not in train]
-    TrainR = R#[train, :]
-    TestR = R#[test, :]
-    TrainY = Ut#[train, :]
-    TestY = Ut#[test, :]
+    TrainR = R  #[train, :]
+    TestR = R  #[test, :]
+    TrainY = Ut  #[train, :]
+    TestY = Ut  #[test, :]
     D = TrainR.shape[1]
 
     # Set up the initial tolerance and l0 penalty
@@ -127,7 +127,7 @@ def Train(R, Ut, lam, d_tol, AIC_ratio=1, maxit=10, STR_iters=10, l0_penalty=1, 
         for item in w:
             if abs(item) != 0:
                 k += 1
-        return AIC_ratio*2*k+2*np.log(err)
+        return AIC_ratio*2*k + 2*np.log(err)
 
     w_best = np.linalg.lstsq(TrainR, TrainY)[0]
     # 基于w_best计算误差，包括data_error_best，AIC_best
