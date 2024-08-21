@@ -165,42 +165,35 @@ class SGA:  # 最外层
 
 
 if __name__ == '__main__':
-    # np.random.seed(10)
-    # a_tree = Tree(max_depth=4, p_var=0.5)
-    # print(is_an_equation(a_tree.preorder.split()))
-
-    # pdb.set_trace()
-
-    # pde = PDE(depth=4, max_width=3, p_var=0.5, p_mute=0.1)
-    # evaluate_mse(pde)
-
-    # pdb.set_trace()
     seed = config.seed
     torch.random.manual_seed(seed)
     np.random.seed(seed)
     torch.cuda.manual_seed_all(seed)
+
     current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    log_filename = f'output/sga/{config.problem}/notes_{current_time}_seed-{seed}.log'
-    # error_log_filename = f'output/sga/{config.problem}/errors_{current_time}_seed-{seed}.log'
-    sys.stdout = Logger(log_filename, sys.stdout)
-    # sys.stderr = Logger(error_log_filename, sys.stderr)
     sga_num = 20
     sga_depth = 4
     sga_width = 5
     sga_p_var = 0.5
+    sga_p_rep = 1
     sga_p_mute = 0.3
     sga_p_cro = 0.5
     sga_run = 100
 
+    log_filename = f'output/sga/{config.problem}/pop{sga_num}_depth{sga_depth}_width{sga_width}_var{sga_p_var}_replace{sga_p_rep}_mute{sga_p_mute}_cross{sga_p_cro}_run{sga_run}_seed{seed}.log'
+    sys.stdout = Logger(log_filename, sys.stdout)
+
+    print('current_time: ', current_time)
     print('sga_num = ', sga_num)
     print('sga_depth = ', sga_depth)
     print('sga_width = ', sga_width)
     print('sga_p_var = ', sga_p_var)
+    print('sga_p_rep = ', sga_p_rep)
     print('sga_p_mute = ', sga_p_mute)
     print('sga_p_cro = ', sga_p_cro)
     print('sga_run = ', sga_run)
 
-    sga = SGA(num=sga_num, depth=sga_depth, width=sga_width, p_var=sga_p_var, p_rep=1, p_mute=sga_p_mute, p_cro=sga_p_cro)
+    sga = SGA(num=sga_num, depth=sga_depth, width=sga_width, p_var=sga_p_var, p_rep=sga_p_rep, p_mute=sga_p_mute, p_cro=sga_p_cro)
     sga.run(sga_run)
 
 # 超参数设定
