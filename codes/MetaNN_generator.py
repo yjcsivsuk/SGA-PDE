@@ -1,9 +1,6 @@
 import numpy as np
 import torch
 import torch.nn as nn
-import scipy.io as scio
-import matplotlib.pyplot as plt
-import torch.nn.functional as F
 import pandas as pd
 import random
 from torch.autograd import Variable
