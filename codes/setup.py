@@ -330,12 +330,12 @@ if plot_the_figures == True:
 default_u = np.reshape(u, (u.shape[0]*u.shape[1], 1))
 default_ux = np.reshape(ux, (u.shape[0]*u.shape[1], 1))
 default_uxx = np.reshape(uxx, (u.shape[0]*u.shape[1], 1))
-# default_uxxx = np.reshape(uxxx, (u.shape[0]*u.shape[1], 1))
+default_uxxx = np.reshape(uxxx, (u.shape[0]*u.shape[1], 1))
 default_u2 = np.reshape(u**2, (u.shape[0]*u.shape[1], 1))
 default_u3 = np.reshape(u**3, (u.shape[0]*u.shape[1], 1))
 # 设置默认项，需要按情况修改
-default_terms = np.hstack((default_u, default_ux, default_uxx, default_u2, default_u3))
-default_names = ['u', 'ux', 'uxx', 'u^2', 'u^3']
+default_terms = np.hstack((default_u, default_ux, default_uxx, default_uxxx, default_u2, default_u3))
+default_names = ['u', 'ux', 'uxx', 'uxxx', 'u^2', 'u^3']
 # default_terms = np.hstack((default_u, default_ux))
 # default_names = ['u', 'ux']
 # default_terms = np.hstack((default_u)).reshape(-1,1)
