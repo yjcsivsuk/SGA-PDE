@@ -1,3 +1,5 @@
 .vscode/
 codes/__pycache__/
 .DS_Store
+data/1D_Advection_Sols_beta1.0.hdf5
+data/ReacDiff_Nu1.0_Rho1.0.hdf5
