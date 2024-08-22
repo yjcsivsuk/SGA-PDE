@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 
 # 选择实验数据集
-problem = 'ReacDiff' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound', 'advection', 'ReacDiff'
+problem = 'heat' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound', 'advection', 'ReacDiff', 'heat'
 seed = 0
 device = None
 if torch.cuda.is_available():
@@ -136,6 +136,18 @@ if problem == 'ReacDiff':
     right_side = 'right_side = uxx + u - u**2'
     left_side = 'left_side = ut'
     right_side_origin = 'right_side_origin = uxx_origin+u_origin*(1-u_origin)'
+    left_side_origin = 'left_side_origin = ut_origin'
+
+# 数据集有问题，shape不是(x,y,t)，不知道怎么改。得在heat_deepxde中画图的部分改data数组？
+# heat: ut = 0.5*uxx + 0.5uyy
+if problem == 'heat':
+    u = np.load("./data/heat_u.npy")  # (<x,y>,t) (40000,21)
+    x = np.load("./data/heat_x.npy")  # (40000,)
+    y = np.load("./data/heat_y.npy")  # (40000,)
+    t = np.load("./data/heat_t.npy")  # (21,)
+    right_side = 'right_side = 0.5*uxx'
+    left_side = 'left_side = ut'
+    right_side_origin = 'right_side_origin = 0.5*uxx_origin'
     left_side_origin = 'left_side_origin = ut_origin'
 
 
