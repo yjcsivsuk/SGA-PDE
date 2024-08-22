@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 
 # 选择实验数据集
-problem = 'PDE_compound' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound'
+problem = 'ReacDiff' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound', 'advection', 'ReacDiff'
 seed = 0
 device = None
 if torch.cuda.is_available():
@@ -86,7 +86,7 @@ if problem == 'PDE_compound':
     right_side_origin = 'right_side_origin = u_origin*uxx_origin + ux_origin*ux_origin'
     left_side_origin = 'left_side_origin = ut_origin'
     
-# Burgers: ut=-u*ux + 0.1*uxx
+# Burgers: ut = -u*ux + 0.1*uxx
 if problem == 'Burgers':
     data = scio.loadmat('./data/burgers.mat')  # (256,201)
     u=data.get("usol")
@@ -108,14 +108,34 @@ if problem == 'Kdv':
     right_side_origin = 'right_side_origin = -0.0025*uxxx_origin-u_origin*ux_origin'
     left_side_origin = 'left_side_origin = ut_origin'
 
-# chafee-infante: u_t = u_xx - u + u**3
+# chafee-infante: ut = u_xx - u + u**3
 if problem == 'chafee-infante':
-    u = np.load("./data/chafee_infante_CI.npy")  # (301,200)
+    u = np.load("./data/chafee_infante_CI.npy")  # (x,t) (301,200)
     x = np.load("./data/chafee_infante_x.npy")
     t = np.load("./data/chafee_infante_t.npy") 
     right_side = 'right_side = uxx-u+u**3'
     left_side = 'left_side = ut'
     right_side_origin = 'right_side_origin = uxx_origin-u_origin+u_origin**3'
+    left_side_origin = 'left_side_origin = ut_origin'
+
+# advection: ut = -ux
+if problem == 'advection':
+    u = np.load("./data/advection_u.npy").T  # (x,t) (1024,201)
+    x = np.load("./data/advection_x.npy")
+    t = np.load("./data/advection_t.npy")
+    right_side = 'right_side = -ux'
+    left_side = 'left_side = ut'
+    right_side_origin = 'right_side_origin = -ux_origin'
+    left_side_origin = 'left_side_origin = ut_origin'
+
+# ReacDiff: ut = uxx + u - u**2
+if problem == 'ReacDiff':
+    u = np.load("./data/ReacDiff_u.npy").T  # (x,t) (1024,101)
+    x = np.load("./data/ReacDiff_x.npy")
+    t = np.load("./data/ReacDiff_t.npy")
+    right_side = 'right_side = uxx + u - u**2'
+    left_side = 'left_side = ut'
+    right_side_origin = 'right_side_origin = uxx_origin+u_origin*(1-u_origin)'
     left_side_origin = 'left_side_origin = ut_origin'
 
 

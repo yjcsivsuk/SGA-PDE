@@ -1,7 +1,9 @@
+from inspect import isfunction
 from tree import *
 from PDE_find import Train
 from configure import aic_ratio
 from setup import default_names, num_default, u
+import pdb
 import warnings
 warnings.filterwarnings('ignore')
 
