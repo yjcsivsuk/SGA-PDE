@@ -325,6 +325,8 @@ default_u3 = np.reshape(u**3, (u.shape[0]*u.shape[1], 1))
 # 设置默认项，需要按情况修改
 default_terms = np.hstack((default_u, default_ux, default_uxx, default_uxxx, default_u2, default_u3))
 default_names = ['u', 'ux', 'uxx', 'uxxx', 'u^2', 'u^3']
+# default_terms = np.hstack((default_u, default_ux, default_uxx, default_u2))
+# default_names = ['u', 'ux', 'uxx', 'u^2']
 # default_terms = np.hstack((default_u, default_ux))
 # default_names = ['u', 'ux']
 # default_terms = np.hstack((default_u)).reshape(-1,1)
@@ -340,10 +342,9 @@ if simple_mode:
     ALL = np.array([['+', 2, np.add], ['-', 2, np.subtract],['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2], 
                     ['u', 0, u], ['x', 0, x], ['ux', 0, ux],  ['0', 0, zeros],
                     ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object) #  ['u^2', 0, u**2], ['uxx', 0, uxx], ['t', 0, t],
-    OPS = np.array([['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, divide],
-                    ['d', 2, Diff], ['d^2', 2, Diff2], ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)
+    OPS = np.array([['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2], ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)
     ROOT = np.array([['*', 2, np.multiply], ['d', 2, Diff], ['d^2', 2, Diff2], ['/', 2, divide], ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)  # 根节点不包含+,-
-    OP1 = np.array([['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)
+    OP1 = np.array([['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)  # 不能更改，否则sga程序运行会卡住
     OP2 = np.array([['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2]], dtype=object)
     # VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux], ['uxx', 0, uxx], ['u^2', 0, u**2]], dtype=object)  # 变量，按照情况进行修改，在PDE_compound数据集中起作用
     VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux]], dtype=object)

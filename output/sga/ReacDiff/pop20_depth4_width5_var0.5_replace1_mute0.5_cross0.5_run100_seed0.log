@@ -1,0 +1,370 @@
+current_time:  2024-08-22_15-11-34
+sga_num =  20
+sga_depth =  4
+sga_width =  5
+sga_p_var =  0.5
+sga_p_rep =  1
+sga_p_mute =  0.5
+sga_p_cro =  0.5
+sga_run =  100
+Creating the original pdes in the pool ...
+Creating the ith pde, i= 0
+a_pde.visualize(): ( ^3 ((u - ux) / (0 * u)))+(x * ( ^3 x))+( ^3 (ux + x))+((( ^2 u) + (ux - 0)) * (ux d^2 x))
+evaluate_aic: 20.294022380760264
+Creating the ith pde, i= 1
+a_pde.visualize(): (x * u)+( ^2 u)+(ux d x)
+evaluate_aic: 20.294493810796016
+Creating the ith pde, i= 2
+a_pde.visualize(): ((( ^2 0) - ( ^2 ux)) d x)
+evaluate_aic: 14.294504968197344
+Creating the ith pde, i= 3
+a_pde.visualize(): (x / ux)
+evaluate_aic: 14.294504968197344
+Creating the ith pde, i= 4
+a_pde.visualize(): ( ^2 (u d x))+( ^2 ux)+( ^2 ux)+( ^3 (x + ( ^3 x)))+(((x * u) d x) * x)
+evaluate_aic: 20.294474901812748
+Creating the ith pde, i= 5
+a_pde.visualize(): (ux * ux)
+evaluate_aic: 14.294504968197344
+Creating the ith pde, i= 6
+a_pde.visualize(): ( ^2 ux)+(((u / ux) d x) d x)+(u d^2 x)
+evaluate_aic: 16.258233275248575
+Creating the ith pde, i= 7
+a_pde.visualize(): ((( ^3 u) / (u * ux)) / ((x / ux) + ( ^2 u)))+( ^3 ux)+(x * ((ux - x) - (u d^2 x)))
+evaluate_aic: 16.294131442349627
+Creating the ith pde, i= 8
+a_pde.visualize(): ( ^2 (ux - (u + ux)))
+evaluate_aic: 16.29449370080541
+Creating the ith pde, i= 9
+a_pde.visualize(): (( ^3 ux) d^2 x)+( ^3 ( ^3 u))
+evaluate_aic: 16.2940504094728
+Creating the ith pde, i= 10
+a_pde.visualize(): (ux / 0)
+evaluate_aic: 16.294504968197344
+Creating the ith pde, i= 11
+a_pde.visualize(): ( ^3 (u / 0))+(((x - ux) d x) / (ux * (ux d^2 x)))+(( ^3 ux) d^2 x)
+evaluate_aic: 18.292021480644593
+Creating the ith pde, i= 12
+a_pde.visualize(): ( ^2 u)+(ux d x)
+evaluate_aic: 18.294504968388953
+Creating the ith pde, i= 13
+a_pde.visualize(): (((u + ux) d^2 x) * ( ^2 (u - ux)))+( ^2 (ux d^2 x))+( ^3 ux)
+evaluate_aic: 16.28674178577747
+Creating the ith pde, i= 14
+a_pde.visualize(): (((u * ux) - x) / x)+((u + 0) d x)+(((x / u) / (u + ux)) * (( ^3 u) + 0))+(x / 0)+( ^2 u)
+evaluate_aic: 18.294503648558038
+Creating the ith pde, i= 15
+a_pde.visualize(): (u d^2 x)+( ^3 u)
+evaluate_aic: 18.25823327524858
+Creating the ith pde, i= 16
+a_pde.visualize(): ( ^3 ux)+( ^2 x)+(((u / 0) d^2 x) d x)
+evaluate_aic: 16.284026759254214
+Creating the ith pde, i= 17
+a_pde.visualize(): ((u - x) * (u - (ux - 0)))+(ux / ( ^3 x))
+evaluate_aic: 16.26509988392531
+Creating the ith pde, i= 18
+a_pde.visualize(): (x / u)
+evaluate_aic: 14.294504968197344
+Creating the ith pde, i= 19
+a_pde.visualize(): (((ux + 0) d x) d^2 x)+( ^3 (ux / x))+( ^2 ux)+(x / x)
+evaluate_aic: 18.27186291141151
+1 generation best_aic & best Eq: 12.286827882540598, (ux * ux)+( ^2 (ux d^2 x))+( ^3 ux)
+best concise Eq: 3.3639u + 0.2354uxx + -8.1253u^2 + 5.2455u^3
+1 generation repeat cross over 0 times and mutation 3 times
+2 generation best_aic & best Eq: 12.286827882540598, (ux * ux)+( ^2 (ux d^2 x))+( ^3 ux)
+best concise Eq: 3.3639u + 0.2354uxx + -8.1253u^2 + 5.2455u^3
+2 generation repeat cross over 10 times and mutation 0 times
+3 generation best_aic & best Eq: 12.286827882540598, (ux * ux)+( ^2 (ux d^2 x))+( ^3 ux)
+best concise Eq: 3.3639u + 0.2354uxx + -8.1253u^2 + 5.2455u^3
+3 generation repeat cross over 12 times and mutation 0 times
+4 generation best_aic & best Eq: 12.286827882540598, (ux * ux)+( ^2 (ux d^2 x))+( ^3 ux)
+best concise Eq: 3.3639u + 0.2354uxx + -8.1253u^2 + 5.2455u^3
+4 generation repeat cross over 10 times and mutation 0 times
+5 generation best_aic & best Eq: 12.286827882540598, (ux * ux)+( ^2 (ux d^2 x))+( ^3 ux)
+best concise Eq: 3.3639u + 0.2354uxx + -8.1253u^2 + 5.2455u^3
+5 generation repeat cross over 14 times and mutation 0 times
+6 generation best_aic & best Eq: 12.286827882540598, (ux * ux)+( ^2 (ux d^2 x))+( ^3 ux)
+best concise Eq: 3.3639u + 0.2354uxx + -8.1253u^2 + 5.2455u^3
+6 generation repeat cross over 13 times and mutation 1 times
+7 generation best_aic & best Eq: 12.286827882540598, (ux * ux)+( ^2 (ux d^2 x))+( ^3 ux)
+best concise Eq: 3.3639u + 0.2354uxx + -8.1253u^2 + 5.2455u^3
+7 generation repeat cross over 11 times and mutation 0 times
+8 generation best_aic & best Eq: 12.286827882540598, (ux * ux)+( ^2 (ux d^2 x))+( ^3 ux)
+best concise Eq: 3.3639u + 0.2354uxx + -8.1253u^2 + 5.2455u^3
+8 generation repeat cross over 12 times and mutation 0 times
+9 generation best_aic & best Eq: 12.286827882540598, (ux * ux)+( ^2 (ux d^2 x))+( ^3 ux)
+best concise Eq: 3.3639u + 0.2354uxx + -8.1253u^2 + 5.2455u^3
+9 generation repeat cross over 7 times and mutation 0 times
+10 generation best_aic & best Eq: 12.286827882540598, (ux * ux)+( ^2 (ux d^2 x))+( ^3 ux)
+best concise Eq: 3.3639u + 0.2354uxx + -8.1253u^2 + 5.2455u^3
+10 generation repeat cross over 9 times and mutation 0 times
+11 generation best_aic & best Eq: 12.286827882540598, (ux * ux)+( ^2 (ux d^2 x))+( ^3 ux)
+best concise Eq: 3.3639u + 0.2354uxx + -8.1253u^2 + 5.2455u^3
+11 generation repeat cross over 10 times and mutation 0 times
+12 generation best_aic & best Eq: 12.286827882540598, (ux * ux)+( ^2 (ux d^2 x))+( ^3 ux)
+best concise Eq: 3.3639u + 0.2354uxx + -8.1253u^2 + 5.2455u^3
+12 generation repeat cross over 9 times and mutation 0 times
+13 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+13 generation repeat cross over 8 times and mutation 0 times
+14 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+14 generation repeat cross over 7 times and mutation 0 times
+15 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+15 generation repeat cross over 3 times and mutation 0 times
+16 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+16 generation repeat cross over 10 times and mutation 0 times
+17 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+17 generation repeat cross over 12 times and mutation 0 times
+18 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+18 generation repeat cross over 14 times and mutation 0 times
+19 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+19 generation repeat cross over 9 times and mutation 0 times
+20 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+20 generation repeat cross over 9 times and mutation 0 times
+21 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+21 generation repeat cross over 9 times and mutation 0 times
+22 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+22 generation repeat cross over 10 times and mutation 0 times
+23 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+23 generation repeat cross over 11 times and mutation 0 times
+24 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+24 generation repeat cross over 15 times and mutation 0 times
+25 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+25 generation repeat cross over 13 times and mutation 0 times
+26 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+26 generation repeat cross over 13 times and mutation 1 times
+27 generation best_aic & best Eq: 12.283726173695243, (u * ux)+( ^3 (ux d^2 x))+( ^2 ((x / 0) + 0))
+best concise Eq: 3.1517u + 0.2354uxx + -7.453u^2 + 4.7178u^3
+27 generation repeat cross over 16 times and mutation 0 times
+28 generation best_aic & best Eq: 12.254727827301979, (u * ux)+(((ux + x) / ( ^3 x)) d^2 x)
+best concise Eq: 3.1092u + 0.236uxx + -7.3425u^2 + 4.6581u^3
+28 generation repeat cross over 12 times and mutation 0 times
+29 generation best_aic & best Eq: 12.254727827301979, (u * ux)+(((ux + x) / ( ^3 x)) d^2 x)
+best concise Eq: 3.1092u + 0.236uxx + -7.3425u^2 + 4.6581u^3
+29 generation repeat cross over 11 times and mutation 0 times
+30 generation best_aic & best Eq: 12.254727827301979, (u * ux)+(((ux + x) / ( ^3 x)) d^2 x)
+best concise Eq: 3.1092u + 0.236uxx + -7.3425u^2 + 4.6581u^3
+30 generation repeat cross over 7 times and mutation 0 times
+31 generation best_aic & best Eq: 12.254727827301979, (u * ux)+(((ux + x) / ( ^3 x)) d^2 x)
+best concise Eq: 3.1092u + 0.236uxx + -7.3425u^2 + 4.6581u^3
+31 generation repeat cross over 14 times and mutation 0 times
+32 generation best_aic & best Eq: 12.254727827301979, (u * ux)+(((ux + x) / ( ^3 x)) d^2 x)
+best concise Eq: 3.1092u + 0.236uxx + -7.3425u^2 + 4.6581u^3
+32 generation repeat cross over 15 times and mutation 0 times
+33 generation best_aic & best Eq: 12.254727827301979, (u * ux)+(((ux + x) / ( ^3 x)) d^2 x)
+best concise Eq: 3.1092u + 0.236uxx + -7.3425u^2 + 4.6581u^3
+33 generation repeat cross over 14 times and mutation 0 times
+34 generation best_aic & best Eq: 12.25410536762611, (((ux + ux) / ( ^3 x)) d^2 x)
+best concise Eq: 3.1342u + 0.236uxx + -7.4402u^2 + 4.7416u^3
+34 generation repeat cross over 19 times and mutation 0 times
+35 generation best_aic & best Eq: 12.25410536762611, (((ux + ux) / ( ^3 x)) d^2 x)
+best concise Eq: 3.1342u + 0.236uxx + -7.4402u^2 + 4.7416u^3
+35 generation repeat cross over 15 times and mutation 0 times
+36 generation best_aic & best Eq: 12.25410536762611, (((ux + ux) / ( ^3 x)) d^2 x)
+best concise Eq: 3.1342u + 0.236uxx + -7.4402u^2 + 4.7416u^3
+36 generation repeat cross over 16 times and mutation 3 times
+37 generation best_aic & best Eq: 12.25410536762611, (((ux + ux) / ( ^3 x)) d^2 x)
+best concise Eq: 3.1342u + 0.236uxx + -7.4402u^2 + 4.7416u^3
+37 generation repeat cross over 15 times and mutation 3 times
+38 generation best_aic & best Eq: 12.25410536762611, (((ux + ux) / ( ^3 x)) d^2 x)
+best concise Eq: 3.1342u + 0.236uxx + -7.4402u^2 + 4.7416u^3
+38 generation repeat cross over 19 times and mutation 3 times
+39 generation best_aic & best Eq: 12.25410536762611, (((ux + ux) / ( ^3 x)) d^2 x)
+best concise Eq: 3.1342u + 0.236uxx + -7.4402u^2 + 4.7416u^3
+39 generation repeat cross over 16 times and mutation 1 times
+40 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+40 generation repeat cross over 17 times and mutation 0 times
+41 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+41 generation repeat cross over 10 times and mutation 1 times
+42 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+42 generation repeat cross over 12 times and mutation 0 times
+43 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+43 generation repeat cross over 11 times and mutation 0 times
+44 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+44 generation repeat cross over 12 times and mutation 0 times
+45 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+45 generation repeat cross over 14 times and mutation 0 times
+46 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+46 generation repeat cross over 19 times and mutation 0 times
+47 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+47 generation repeat cross over 17 times and mutation 0 times
+48 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+48 generation repeat cross over 19 times and mutation 0 times
+49 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+49 generation repeat cross over 17 times and mutation 0 times
+50 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+50 generation repeat cross over 20 times and mutation 0 times
+51 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+51 generation repeat cross over 16 times and mutation 0 times
+52 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+52 generation repeat cross over 18 times and mutation 0 times
+53 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+53 generation repeat cross over 19 times and mutation 0 times
+54 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+54 generation repeat cross over 18 times and mutation 0 times
+55 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+55 generation repeat cross over 18 times and mutation 0 times
+56 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+56 generation repeat cross over 18 times and mutation 0 times
+57 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+57 generation repeat cross over 20 times and mutation 0 times
+58 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+58 generation repeat cross over 18 times and mutation 0 times
+59 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+59 generation repeat cross over 18 times and mutation 0 times
+60 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+60 generation repeat cross over 20 times and mutation 0 times
+61 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+61 generation repeat cross over 18 times and mutation 0 times
+62 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+62 generation repeat cross over 19 times and mutation 0 times
+63 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+63 generation repeat cross over 18 times and mutation 0 times
+64 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+64 generation repeat cross over 19 times and mutation 0 times
+65 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+65 generation repeat cross over 20 times and mutation 0 times
+66 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+66 generation repeat cross over 19 times and mutation 0 times
+67 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+67 generation repeat cross over 18 times and mutation 0 times
+68 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+68 generation repeat cross over 18 times and mutation 0 times
+69 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+69 generation repeat cross over 20 times and mutation 1 times
+70 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+70 generation repeat cross over 20 times and mutation 0 times
+71 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+71 generation repeat cross over 20 times and mutation 0 times
+72 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+72 generation repeat cross over 20 times and mutation 0 times
+73 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+73 generation repeat cross over 19 times and mutation 0 times
+74 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+74 generation repeat cross over 20 times and mutation 0 times
+75 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+75 generation repeat cross over 19 times and mutation 1 times
+76 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+76 generation repeat cross over 20 times and mutation 0 times
+77 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+77 generation repeat cross over 20 times and mutation 0 times
+78 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+78 generation repeat cross over 20 times and mutation 0 times
+79 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+79 generation repeat cross over 20 times and mutation 0 times
+80 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+80 generation repeat cross over 20 times and mutation 0 times
+81 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+81 generation repeat cross over 20 times and mutation 0 times
+82 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+82 generation repeat cross over 20 times and mutation 0 times
+83 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+83 generation repeat cross over 20 times and mutation 1 times
+84 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+84 generation repeat cross over 19 times and mutation 0 times
+85 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+85 generation repeat cross over 18 times and mutation 0 times
+86 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+86 generation repeat cross over 18 times and mutation 0 times
+87 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+87 generation repeat cross over 19 times and mutation 0 times
+88 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+88 generation repeat cross over 19 times and mutation 0 times
+89 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+89 generation repeat cross over 19 times and mutation 0 times
+90 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+90 generation repeat cross over 19 times and mutation 0 times
+91 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+91 generation repeat cross over 17 times and mutation 0 times
+92 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+92 generation repeat cross over 18 times and mutation 0 times
+93 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+93 generation repeat cross over 18 times and mutation 0 times
+94 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+94 generation repeat cross over 19 times and mutation 0 times
+95 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+95 generation repeat cross over 16 times and mutation 1 times
+96 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+96 generation repeat cross over 19 times and mutation 0 times
+97 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+97 generation repeat cross over 20 times and mutation 0 times
+98 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+98 generation repeat cross over 13 times and mutation 0 times
+99 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+99 generation repeat cross over 19 times and mutation 0 times
+100 generation best_aic & best Eq: 12.254040250697592, (((u * ux) / ( ^3 x)) d^2 x)+( ^2 ( ^3 ux))
+best concise Eq: 3.1353u + 0.236uxx + -7.4437u^2 + 4.7445u^3
+100 generation repeat cross over 17 times and mutation 0 times
