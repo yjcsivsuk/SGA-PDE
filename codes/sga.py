@@ -181,6 +181,7 @@ if __name__ == '__main__':
     sys.stdout = Logger(log_filename, sys.stdout)
 
     print('current_time: ', current_time)
+    print('problem: ', config.problem)
     print('sga_num = ', sga_num)
     print('sga_depth = ', sga_depth)
     print('sga_width = ', sga_width)
