@@ -61,27 +61,29 @@ if use_metadata == True:
 
     diff =  (u - u_new2)/u_new2
 
-    print(np.max(diff))
-    print(np.min(diff))
-    print(np.mean(np.abs(diff)))
-    print(np.median(np.abs(diff)))
+    print('max diff:', np.max(diff))
+    print('min diff:', np.min(diff))
+    print('mae diff:', np.mean(np.abs(diff)))
 
+    plt.figure(figsize=(5,3))
+    x_index = np.linspace(0,100, n)
+    x_index_fine = np.linspace(0,100, n_fine)
+    plt.title('U_Origin', fontsize=15)
+    plt.plot(x_index, u[:,int(m/2)])
+    plt.savefig(f'./output/data_generator/{config.problem}/u_origin.png')
+    plt.close()
+    plt.title('U_New', fontsize=15)
+    plt.plot(x_index_fine, u_new[:,int(m_fine/2)])
+    plt.savefig(f'./output/data_generator/{config.problem}/u_new.png')
+    plt.close()
     plt.figure(figsize=(5,3))
     mm1=plt.imshow(np.abs(diff), interpolation='nearest',  cmap='Blues', origin='lower', vmax=0.05, vmin=0)
     plt.colorbar().ax.tick_params(labelsize=16) 
     plt.xticks(fontsize=15)
     plt.yticks(fontsize=15)
-    plt.title('Data error', fontsize = 15)
-
-    plt.figure(figsize=(5,3))
-    plt.hist(diff.reshape(-1,1))
-
-    plt.figure(figsize=(5,3))
-    x_index = np.linspace(0,100, n)
-    x_index_fine = np.linspace(0,100, n_fine)
-    plt.plot(x_index, u[:,int(m/2)])
-    plt.plot(x_index_fine, u_new[:,int(m_fine/2)])
-    plt.show()
+    plt.title('U_Diff', fontsize=15)
+    plt.savefig(f'./output/data_generator/{config.problem}/u_diff.png')
+    plt.close()
 
 if use_metadata == True:
     u = u_new

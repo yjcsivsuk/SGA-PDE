@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 
 # 选择实验数据集
-problem = 'heat' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound', 'advection', 'ReacDiff', 'heat'
+problem = 'Burgers' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound', 'advection', 'ReacDiff', 'heat'
 seed = 0
 device = None
 if torch.cuda.is_available():
@@ -18,7 +18,7 @@ else:
 ###########################################################################################
 # Neural network
 max_epoch = 100 * 1000
-path = '../model/'+problem+'_sine_sin_50_3fc2_'+'%d'%(max_epoch/1000)+'k_Adam.pkl'
+path = 'model/'+problem+'_sine_sin_50_3fc2_'+'%d'%(max_epoch/1000)+'k_Adam.pkl'
 hidden_dim = 50
 
 train_ratio = 1  # the ratio of training dataset
