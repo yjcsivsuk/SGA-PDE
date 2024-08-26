@@ -53,7 +53,7 @@ x_all = Data_generator.x_all
 n, m = u.shape
 dx = x[2]-x[1]
 dt = t[1]-t[0]
-# 扩充维度使得与u的size相同
+# 扩充维度使得x和t与u的size相同
 x = np.tile(x, (m, 1)).transpose((1, 0))  # (n,m) (256,201)
 x_all = np.tile(x_all, (m, 1)).transpose((1, 0))  # (n,m) (256,201)
 t = np.tile(t, (n, 1))  # (n,m) (256,201)
