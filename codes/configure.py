@@ -142,12 +142,13 @@ if problem == 'ReacDiff':
 # heat: ut = 0.5*uxx + 0.5uyy
 if problem == 'heat':
     u = np.load("./data/heat_u.npy")  # (<x,y>,t) (40000,21)
-    x = np.load("./data/heat_x.npy")  # (40000,)
-    y = np.load("./data/heat_y.npy")  # (40000,)
+    x = np.load("./data/heat_coor.npy")  # (40000,2)
+    # x = np.load("./data/heat_x.npy")  # (200,)
+    # y = np.load("./data/heat_y.npy")  # (200,)
     t = np.load("./data/heat_t.npy")  # (21,)
-    right_side = 'right_side = 0.5*uxx'
+    right_side = 'right_side = 0.5*uxx + 0.5*uyy'
     left_side = 'left_side = ut'
-    right_side_origin = 'right_side_origin = 0.5*uxx_origin'
+    right_side_origin = 'right_side_origin = 0.5*uxx_origin + 0.5*uyy_orgin'
     left_side_origin = 'left_side_origin = ut_origin'
 
 
