@@ -25,6 +25,7 @@ u=config.u
 x=config.x
 t=config.t
 n, m = u.shape
+
 Y_raw = pd.DataFrame(u.reshape(-1,1))
 X1 = np.repeat(x.reshape(-1,1), m, axis=1)
 X2 = np.repeat(t.reshape(1,-1), n, axis=0)

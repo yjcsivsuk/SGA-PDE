@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 
 # 选择实验数据集
-problem = 'Burgers' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound', 'advection', 'ReacDiff', 'heat'
+problem = 'heat' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound', 'advection', 'ReacDiff', 'heat'
 seed = 0
 device = None
 if torch.cuda.is_available():
@@ -138,10 +138,11 @@ if problem == 'ReacDiff':
     right_side_origin = 'right_side_origin = uxx_origin+u_origin*(1-u_origin)'
     left_side_origin = 'left_side_origin = ut_origin'
 
-# 数据集有问题，shape不是(x,y,t)，不知道怎么改。得在heat_deepxde中画图的部分改data数组？
+# 数据集有问题，不知道维度应该是什么样子的，导致后续在获取数据的时候，也不知道该怎样去获取。
 # heat: ut = 0.5*uxx + 0.5uyy
 if problem == 'heat':
     u = np.load("./data/heat_u.npy")  # (<x,y>,t) (40000,21)
+    # u = np.load("./data/heat_xyt.npy")  # (200,200,21)
     x = np.load("./data/heat_coor.npy")  # (40000,2)
     # x = np.load("./data/heat_x.npy")  # (200,)
     # y = np.load("./data/heat_y.npy")  # (200,)
