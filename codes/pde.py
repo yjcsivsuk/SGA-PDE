@@ -53,7 +53,7 @@ class PDE:
         coefficients = coefficients[:, 0]
         # print(len(elements), len(coefficients))
         for i in range(len(coefficients)):
-            if np.abs(coefficients[i]) < 1e-2: # 忽略过于小的系数（从1e-4增加到了1e-2）。但这里只是直接删除了表达式中过小系数的项，符号树的结构没有发生改变。应该增加一个剪枝的操作。
+            if np.abs(coefficients[i]) < 1e-4: # 忽略过于小的系数（从1e-4增加到了1e-2）。但这里只是直接删除了表达式中过小系数的项，符号树的结构没有发生改变。应该增加一个剪枝的操作。
                 continue
             if i != 0 and name != '':
                 name += ' + '

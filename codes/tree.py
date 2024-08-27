@@ -33,6 +33,7 @@ class Node:
     def reset_status(self): # 初始化status
         self.status = self.child_num
 
+# TODO: 二维的时候，感觉得在规则1里加些东西：当父节点为d时，子结点的右侧只能是xy，且左侧只能是x，不能是xy。
 # 一个二叉树对应于pde中的一个term
 class Tree:
     def __init__(self, max_depth, p_var):
