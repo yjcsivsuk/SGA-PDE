@@ -98,7 +98,7 @@ if use_difference == True:
     for idx in range(m_origin):
         uxxx_origin[:, idx] = FiniteDiff(uxx_origin[:, idx], dx_origin)
 
-# autograd 问题在于被求导的部分形式不确定，如果每次重新训练神经网，代价过高。
+# autograd 问题在于被求导的部分形式不确定，如果每次重新训练神经网络，代价过高。
 if use_autograd == True:
     # load model
     hidden_dim = config.hidden_dim
@@ -109,7 +109,7 @@ if use_autograd == True:
     def fun(x,t,Net):
         database = torch.cat((x,t), 1)
         database = Variable(database, requires_grad=True)
-        PINNstatic=Net(database.float())
+        PINNstatic = Net(database.float())
         H_grad = torch.autograd.grad(outputs=PINNstatic.sum(), inputs=database, create_graph=True)[0]
         Ht = H_grad[:, 1]
         Hx = H_grad[:, 0]
