@@ -15,26 +15,32 @@ t = Data_generator.t
 
 # 一阶有限差分
 def FiniteDiff(u, dx):
-
+    """
+    Calculate the first-order finite difference of a 1D array u.
+    :param u: 1D numpy array
+    :param dx: Grid spacing
+    :return: 1D numpy array containing the first-order differences
+    """
     n = u.size
     ux = np.zeros(n)
-
     for i in range(1, n - 1):
         ux[i] = (u[i + 1] - u[i - 1]) / (2 * dx)
-
     ux[0] = (-3.0 / 2 * u[0] + 2 * u[1] - u[2] / 2) / dx
     ux[n - 1] = (3.0 / 2 * u[n - 1] - 2 * u[n - 2] + u[n - 3] / 2) / dx
     return ux
 
 # 二阶有限差分
 def FiniteDiff2(u, dx):
-
+    """
+    Calculate the second-order finite difference of a 1D array u.
+    :param u: 1D numpy array
+    :param dx: Grid spacing
+    :return: 1D numpy array containing the second-order differences
+    """
     n = u.size
     ux = np.zeros(n)
-
     for i in range(1, n - 1):
         ux[i] = (u[i + 1] - 2 * u[i] + u[i - 1]) / dx ** 2
-
     ux[0] = (2 * u[0] - 5 * u[1] + 4 * u[2] - u[3]) / dx ** 2
     ux[n - 1] = (2 * u[n - 1] - 5 * u[n - 2] + 4 * u[n - 3] - u[n - 4]) / dx ** 2
     return ux
@@ -42,45 +48,77 @@ def FiniteDiff2(u, dx):
 # 求一阶导
 def Diff(u, dxt, name):
     """
-    Here dx is a scalar, name is a str indicating what it is
+    Calculate the first-order difference of a 2D/3D array u along a specified dimension.
+    :param u: 2D/3D numpy array
+    :param dxt: Grid spacing
+    :param name: Dimension along which to compute the difference ('x', 'y', or 't')
+    :return: 2D/3D numpy array containing the first-order differences
     """
-
-    n, m = u.shape
-    uxt = np.zeros((n, m))
-
-    if name == 'x':
-        for i in range(m):
-            uxt[:, i] = FiniteDiff(u[:, i], dxt)
-
-    elif name == 't':
-        for i in range(n):
-            uxt[i, :] = FiniteDiff(u[i, :], dxt)
-
-    else:
-        NotImplementedError()
-
+    if len(u.shape) == 2:
+        n, m = u.shape
+        uxt = np.zeros((n, m))
+        if name == 'x':
+            for i in range(m):
+                uxt[:, i] = FiniteDiff(u[:, i], dxt)
+        elif name == 't':
+            for i in range(n):
+                uxt[i, :] = FiniteDiff(u[i, :], dxt)
+        else:
+            NotImplementedError()
+    elif len(u.shape) == 3:
+        uxt = np.zeros_like(u)
+        if name == 'x':
+            for i in range(u.shape[1]):
+                for j in range(u.shape[2]):
+                    uxt[:, i, j] = FiniteDiff(u[:, i, j], dxt)
+        elif name == 'y':
+            for i in range(u.shape[0]):
+                for j in range(u.shape[2]):
+                    uxt[i, :, j] = FiniteDiff(u[i, :, j], dxt)
+        elif name == 't':
+            for i in range(u.shape[0]):
+                for j in range(u.shape[1]):
+                    uxt[i, j, :] = FiniteDiff(u[i, j, :], dxt)
+        else:
+            raise ValueError("Name must be 'x', 'y', or 't'")
     return uxt
 
 # 求二阶导
 def Diff2(u, dxt, name):
     """
-    Here dx is a scalar, name is a str indicating what it is
+    Calculate the first-order difference of a 2D/3D array u along a specified dimension.
+    :param u: 2D/3D numpy array
+    :param dxt: Grid spacing
+    :param name: Dimension along which to compute the difference ('x', 'y', or 't')
+    :return: 2D/3D numpy array containing the first-order differences
     """
-
-    n, m = u.shape
-    uxt = np.zeros((n, m))
-
-    if name == 'x':
-        for i in range(m):
-            uxt[:, i] = FiniteDiff2(u[:, i], dxt)
-
-    elif name == 't':
-        for i in range(n):
-            uxt[i, :] = FiniteDiff2(u[i, :], dxt)
-
-    else:
-        NotImplementedError()
-
+    if len(u.shape) == 2:
+        n, m = u.shape
+        uxt = np.zeros((n, m))
+        if name == 'x':
+            for i in range(m):
+                uxt[:, i] = FiniteDiff2(u[:, i], dxt)
+        elif name == 't':
+            for i in range(n):
+                uxt[i, :] = FiniteDiff2(u[i, :], dxt)
+        else:
+            NotImplementedError()
+    elif len(u.shape) == 3:
+        uxt = np.zeros_like(u)
+        if name == 'x':
+            for i in range(u.shape[1]):
+                for j in range(u.shape[2]):
+                    uxt[:, i, j] = FiniteDiff2(u[:, i, j], dxt)
+        elif name == 'y':
+            for i in range(u.shape[0]):
+                for j in range(u.shape[2]):
+                    uxt[i, :, j] = FiniteDiff2(u[i, :, j], dxt)
+        elif name == 't':
+            for i in range(u.shape[0]):
+                for j in range(u.shape[1]):
+                    uxt[i, j, :] = FiniteDiff2(u[i, j, :], dxt)
+        else:
+            raise ValueError("Name must be 'x', 'y', or 't'")
     return uxt
 
 # train函数使用STRidge训练一个预测器。它在不同的tol值上运行，并在训练集上训练预测器，然后在保留集上使用损失函数对它们进行评估。
