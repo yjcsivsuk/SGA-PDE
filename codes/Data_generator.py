@@ -18,15 +18,23 @@ device = config.device
 
 u=config.u
 x=config.x
+y=config.y
 t=config.t
-n, m = u.shape
-Y_raw = pd.DataFrame(u.reshape(-1,1))
-X1 = np.repeat(x.reshape(-1,1), m, axis=1)
-X2 = np.repeat(t.reshape(1,-1), n, axis=0)
-X_raw_norm = pd.concat([pd.DataFrame(X1.reshape(-1,1)), pd.DataFrame(X2.reshape(-1,1))], axis=1, sort=False)
+ut=config.ut
+default_u=config.default_u
+default_ux=config.default_ux
+default_uy=config.default_uy
+default_uxx=config.default_uxx
+default_uyy=config.default_uyy
 
 
 if use_metadata == True:
+    n, m = u.shape
+    Y_raw = pd.DataFrame(u.reshape(-1,1))
+    X1 = np.repeat(x.reshape(-1,1), m, axis=1)
+    X2 = np.repeat(t.reshape(1,-1), n, axis=0)
+    X_raw_norm = pd.concat([pd.DataFrame(X1.reshape(-1,1)), pd.DataFrame(X2.reshape(-1,1))], axis=1, sort=False)
+
     # load model
     hidden_dim = config.hidden_dim
     num_feature = config.num_feature
@@ -93,7 +101,14 @@ if use_metadata == True:
 if use_metadata == False:
     u = u
     x = x
+    y = y
     t = t
+    ut = ut
+    default_u = default_u
+    default_ux = default_ux
+    default_uy = default_uy
+    default_uxx = default_uxx
+    default_uyy = default_uyy
     
 x_all = x    
 # 提取指定区间内的MetaData数据

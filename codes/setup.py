@@ -384,10 +384,15 @@ else:
     # y = np.load('data/heat_y_less_initup1.npy')  # (100,) (m,)
     # t = np.load('data/heat_t.npy')  # (21,) (k,)
 
-    u = np.load('data/heat_xyt_less_initup1down1.npy')  # (100,100,21) (n,m,k)
-    x = np.load('data/heat_x_less_initup1down1.npy')  # (100,) (n,)
-    y = np.load('data/heat_y_less_initup1down1.npy')  # (100,) (m,)
-    t = np.load('data/heat_t.npy')  # (21,) (k,)
+    # u = np.load('data/heat_xyt_less_initup1down1.npy')  # (100,100,21) (n,m,k)
+    # x = np.load('data/heat_x_less_initup1down1.npy')  # (100,) (n,)
+    # y = np.load('data/heat_y_less_initup1down1.npy')  # (100,) (m,)
+    # t = np.load('data/heat_t.npy')  # (21,) (k,)
+    
+    u = Data_generator.u
+    x = Data_generator.x
+    y = Data_generator.y
+    t = Data_generator.t
 
     dx = x[2] - x[1]
     dy = y[2] - y[1]
@@ -436,19 +441,26 @@ else:
         # default_uxx = np.load('data/heat_uxx_less_initup1.npy')  # (210000,1)
         # default_uyy = np.load('data/heat_uyy_less_initup1.npy')  # (210000,1)
 
-        u = np.load('data/heat_xyt_less_initup1down1.npy')  # (100,100,21)
-        ut = np.load('data/heat_ut_less_initup1down1.npy')  # (210000,1)
-        default_u = np.load('data/heat_out_less_initup1down1.npy')  # (210000,1)
-        default_ux = np.load('data/heat_ux_less_initup1down1.npy')  # (210000,1)
-        default_uy = np.load('data/heat_uy_less_initup1down1.npy')  # (210000,1)
-        default_uxx = np.load('data/heat_uxx_less_initup1down1.npy')  # (210000,1)
-        default_uyy = np.load('data/heat_uyy_less_initup1down1.npy')  # (210000,1)
-        
+        # u = np.load('data/heat_xyt_less_initup1down1.npy')  # (100,100,21)
+        # ut = np.load('data/heat_ut_less_initup1down1.npy')  # (210000,1)
+        # default_u = np.load('data/heat_out_less_initup1down1.npy')  # (210000,1)
+        # default_ux = np.load('data/heat_ux_less_initup1down1.npy')  # (210000,1)
+        # default_uy = np.load('data/heat_uy_less_initup1down1.npy')  # (210000,1)
+        # default_uxx = np.load('data/heat_uxx_less_initup1down1.npy')  # (210000,1)
+        # default_uyy = np.load('data/heat_uyy_less_initup1down1.npy')  # (210000,1)
+
+        ut = Data_generator.ut
+        default_u = Data_generator.default_u
+        default_ux = Data_generator.default_ux
+        default_uy = Data_generator.default_uy
+        default_uxx = Data_generator.default_uxx
+        default_uyy = Data_generator.default_uyy
+
+        ut = np.reshape(ut, (n, m, k))
         ux = np.reshape(default_ux, (n, m, k))
         uy = np.reshape(default_uy, (n, m, k))
         uxx = np.reshape(default_uxx, (n, m, k))
         uyy = np.reshape(default_uyy, (n, m, k))
-        ut = np.reshape(ut, (n, m, k))
 
     exec (config.right_side)
     exec (config.left_side)
