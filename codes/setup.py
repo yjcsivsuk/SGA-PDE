@@ -17,8 +17,11 @@ simple_mode = True
 see_tree = None
 plot_the_figures = False
 use_metadata = False 
-use_difference = True
+use_difference = False
 use_extend = True
+
+def cubic(inputs):
+        return np.power(inputs, 3)
 
 if use_extend == False:
     if use_difference == True:
@@ -27,9 +30,6 @@ if use_extend == False:
     else:
         use_autograd = True
         print('Using autograd method')
-
-    def cubic(inputs):
-        return np.power(inputs, 3)
 
     def get_random_int(max_int):
         random_result = get('https://www.random.org/integers/?num=1&min=0&max={0}&col=1&base=10&format=plain&rnd=new'.format(max_int)).content
@@ -81,7 +81,7 @@ if use_extend == False:
         uxx = np.zeros((n, m))
         uxxx = np.zeros((n, m))
         for idx in range(m):
-            ux[:, idx] = FiniteDiff(u[:, idx], dx) #idx is the id of one time step
+            ux[:, idx] = FiniteDiff(u[:, idx], dx)  #idx is the id of one time step
         for idx in range(m):
             uxx[:, idx] = FiniteDiff(ux[:, idx], dx)
         for idx in range(m):
@@ -94,7 +94,7 @@ if use_extend == False:
         uxx_origin = np.zeros((n_origin, m_origin))
         uxxx_origin = np.zeros((n_origin, m_origin))
         for idx in range(m_origin):
-            ux_origin[:, idx] = FiniteDiff(u_origin[:, idx], dx_origin) #idx is the id of one time step
+            ux_origin[:, idx] = FiniteDiff(u_origin[:, idx], dx_origin)  #idx is the id of one time step
         for idx in range(m_origin):
             uxx_origin[:, idx] = FiniteDiff(ux_origin[:, idx], dx_origin)
         for idx in range(m_origin):
@@ -108,7 +108,7 @@ if use_extend == False:
         model = config.Net(num_feature, hidden_dim, 1)
         model.load_state_dict(torch.load(config.path))
         # autograd
-        def fun(x,t,Net):
+        def fun(x, t, Net):
             database = torch.cat((x,t), 1)
             database = Variable(database, requires_grad=True)
             PINNstatic = Net(database.float())
@@ -314,7 +314,6 @@ if use_extend == False:
         plt.title('Original Residual', fontsize = 15)
         plt.savefig(path_prefix + config.problem + '_Original_Residual_'+'%d'%(config.max_epoch/1000) + 'k.png', dpi = 300, bbox_inches='tight')
 
-
     ###########################################################################################
     # for default evaluation
     # 把数据集中的数据重塑shape为(nxm,1) 
@@ -355,24 +354,75 @@ if use_extend == False:
 
     pde_lib, err_lib = [], []
 else:
-    def cubic(inputs):
-        return np.power(inputs, 3)
+    if use_difference == True:
+        use_autograd = False
+        print('Using difference method')
+    else:
+        use_autograd = True
+        print('Using autograd method')
     
     rand = config.seed
     print('random seed: {}'.format(rand))
     np.random.seed(rand)
     random.seed(rand)
 
-    ut = np.load('data/heat_ut.npy')  # (840000,1)
-    default_u = np.load('data/heat_out.npy')  # (840000,1)
-    default_ux = np.load('data/heat_ux.npy')  # (840000,1)
-    default_uy = np.load('data/heat_uy.npy')  # (840000,1)
-    default_uxx = np.load('data/heat_uxx.npy')  # (840000,1)
-    default_uyy = np.load('data/heat_uyy.npy')  # (840000,1)
+    u = np.load('data/heat_xyt.npy')  # (200,200,21) (n,m,k)
+    x = np.load('data/heat_x.npy')  # (200,) (n,)
+    y = np.load('data/heat_y.npy')  # (200,) (m,)
+    t = np.load('data/heat_t.npy')  # (21,) (k,)
+
+    dx = x[2] - x[1]
+    dy = y[2] - y[1]
+    dt = t[1] - t[0]
+    n, m, k = u.shape
+
+    x = np.tile(x, (m, k, 1)).transpose((2, 0, 1))  # (m,k,n)->(n,m,k)
+    y = np.tile(y, (n, k, 1)).transpose((0, 2, 1))  # (n,k,m)->(n,m,k)
+    t = np.tile(t, (n, m, 1))  # (n,m,k)
+
+    if use_difference == True:
+        ut = Diff(u, dt, t)
+        ux = Diff(u, dx, x)
+        uy = Diff(u, dy, y)
+        uxx = Diff2(u, dx, x)
+        uyy = Diff2(u, dy, y)
+        
+        default_u = np.reshape(u, (n*m*k, 1))
+        default_ux = np.reshape(ux, (n*m*k, 1))
+        default_uy = np.reshape(uy, (n*m*k, 1))
+        default_uxx = np.reshape(uxx, (n*m*k, 1))
+        default_uyy = np.reshape(uyy, (n*m*k, 1))
+        
+    if use_autograd == True:
+        u = np.load('data/heat_xyt.npy')  # (200,200,21)
+        ut = np.load('data/heat_ut.npy')  # (840000,1)
+        default_u = np.load('data/heat_out.npy')  # (840000,1)
+        default_ux = np.load('data/heat_ux.npy')  # (840000,1)
+        default_uy = np.load('data/heat_uy.npy')  # (840000,1)
+        default_uxx = np.load('data/heat_uxx.npy')  # (840000,1)
+        default_uyy = np.load('data/heat_uyy.npy')  # (840000,1)
+        ux = np.reshape(default_ux, (n, m, k))
+        uy = np.reshape(default_uy, (n, m, k))
+        uxx = np.reshape(default_uxx, (n, m, k))
+        uyy = np.reshape(default_uyy, (n, m, k))
+        ut = np.reshape(ut, (n, m, k))
+
+    exec (config.right_side)
+    exec (config.left_side)
+    n1, n2, m1, m2, k1, k2 = int(n*0), int(n*1), int(m*0), int(m*1), int(k*0), int(k*1)
+    right_side_full = right_side
+    right_side = right_side[n1:n2, m1:m2, k1:k2]
+    left_side = left_side[n1:n2, m1:m2, k1:k2]
+    right = np.reshape(right_side, ((n2-n1)*(m2-m1)*(k2-k1), 1))
+    left = np.reshape(left_side, ((n2-n1)*(m2-m1)*(k2-k1), 1))
+    diff = np.linalg.norm(left-right, 2)/((n2-n1)*(m2-m1)*(k2-k1))
+    print('data error', diff)
 
     # 设置默认项，需要按情况修改
     default_terms = np.hstack((default_u, default_ux, default_uy, default_uxx, default_uyy))
     default_names = ['u', 'ux', 'uy', 'uxx', 'uyy']
+    # default_terms = np.hstack((default_uxx, default_uyy))
+    # default_names = ['uxx', 'uyy']
 
     print("默认项shape:", default_terms.shape)
     num_default = default_terms.shape[1]  # 包含的默认项的数量，num_default中为一定包含的候选集
@@ -383,14 +433,15 @@ else:
     if simple_mode:
         ALL = np.array([['+', 2, np.add], ['-', 2, np.subtract],['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2], 
                         ['u', 0, u], ['x', 0, x], ['ux', 0, ux],  ['0', 0, zeros],
-                        ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object) #  ['u^2', 0, u**2], ['uxx', 0, uxx], ['t', 0, t],
+                        ['^2', 1, np.square], ['^3', 1, cubic], ['y', 0, y], ['uy', 0, uy]], dtype=object)
         OPS = np.array([['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2], ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)
         ROOT = np.array([['*', 2, np.multiply], ['d', 2, Diff], ['d^2', 2, Diff2], ['/', 2, divide], ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)  # 根节点不包含+,-
         OP1 = np.array([['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)  # 不能更改，否则sga程序运行会卡住
         OP2 = np.array([['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2]], dtype=object)
         # VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux], ['uxx', 0, uxx], ['u^2', 0, u**2]], dtype=object)  # 变量，按照情况进行修改，在PDE_compound数据集中起作用
-        VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux]], dtype=object)
-        den = np.array([['x', 0, x]], dtype=object)
+        VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux], ['y', 0, y], ['uy', 0, uy]], dtype=object)
+        # VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux], ['y', 0, y], ['uy', 0, uy], ['uxx', 0, uxx], ['uyy', 0, uyy]], dtype=object)
+        den = np.array([['x', 0, x], ['y', 0, y]], dtype=object)
 
     pde_lib, err_lib = [], []
 

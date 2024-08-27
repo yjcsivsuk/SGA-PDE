@@ -2,7 +2,7 @@ from inspect import isfunction
 from tree import *
 from PDE_find import Train
 from configure import aic_ratio
-from setup import default_names, num_default, u
+from setup import default_names, num_default, u, dx, dy, dt
 import pdb
 import warnings
 warnings.filterwarnings('ignore')
@@ -70,7 +70,10 @@ def evaluate_mse(a_pde, is_term=False):
         terms = a_pde
     else:
         terms = a_pde.elements
-    terms_values = np.zeros((u.shape[0] * u.shape[1], len(terms)))  # len(terms)是a_pde.elements候选集的大小，猜测是二叉树中有几个结点
+    if len(u.shape) == 2:
+        terms_values = np.zeros((u.shape[0] * u.shape[1], len(terms)))  # len(terms)是a_pde.elements候选集的大小，猜测是二叉树中有几个结点
+    elif len(u.shape)  == 3:
+        terms_values = np.zeros((u.shape[0] * u.shape[1] * u.shape[2], len(terms)))  # len(terms)是a_pde.elements候选集的大小，猜测是二叉树中有几个结点
     delete_ix = []
     for ix, term in enumerate(terms):
         tree_list = term.tree
@@ -104,6 +107,8 @@ def evaluate_mse(a_pde, is_term=False):
                                 tmp = dt
                             elif what_is_denominator == 'x':
                                 tmp = dx
+                            elif what_is_denominator == 'y':
+                                tmp = dy
                             else:
                                 raise NotImplementedError()
 
@@ -153,8 +158,10 @@ def evaluate_mse(a_pde, is_term=False):
     else:
         # 2D --> 1D
         terms_values = np.hstack((default_terms, terms_values))
-        w, loss, mse, aic = Train(terms_values, ut.reshape(n * m, 1), 0, 1, aic_ratio)
-
+        if len(u.shape) == 2:
+            w, loss, mse, aic = Train(terms_values, ut.reshape(n * m, 1), 0, 1, aic_ratio)
+        elif len(u.shape) == 3:
+            w, loss, mse, aic = Train(terms_values, ut.reshape(n * m * k, 1), 0, 1, aic_ratio)
     if is_term:
         return terms, w
     else:
