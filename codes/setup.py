@@ -17,7 +17,7 @@ simple_mode = True
 see_tree = None
 plot_the_figures = False
 use_metadata = False 
-use_difference = True
+use_difference = False
 use_extend = True
 
 def cubic(inputs):
@@ -410,13 +410,22 @@ else:
     exec (config.right_side)
     exec (config.left_side)
     n1, n2, m1, m2, k1, k2 = int(n*0), int(n*1), int(m*0), int(m*1), int(k*0), int(k*1)
-    right_side_full = right_side
     right_side = right_side[n1:n2, m1:m2, k1:k2]
     left_side = left_side[n1:n2, m1:m2, k1:k2]
     right = np.reshape(right_side, ((n2-n1)*(m2-m1)*(k2-k1), 1))
     left = np.reshape(left_side, ((n2-n1)*(m2-m1)*(k2-k1), 1))
     diff = np.linalg.norm(left-right, 2)/((n2-n1)*(m2-m1)*(k2-k1))
-    print('data error', diff)
+    print('data error', diff)  # 用差分计算的导数，diff=0.04；用外部的导数，diff=0.02
+
+    exec (config.right_side)
+    exec (config.left_side)
+    n1, n2, m1, m2, k1, k2 = int(n*0.1), int(n*0.9), int(m*0.1), int(m*0.9), int(k*0), int(k*1)
+    right_side = right_side[n1:n2, m1:m2, k1:k2]
+    left_side = left_side[n1:n2, m1:m2, k1:k2]
+    right = np.reshape(right_side, ((n2-n1)*(m2-m1)*(k2-k1), 1))
+    left = np.reshape(left_side, ((n2-n1)*(m2-m1)*(k2-k1), 1))
+    diff_without_edges = np.linalg.norm(left-right, 2)/((n2-n1)*(m2-m1)*(k2-k1))
+    print('data error without edges', diff_without_edges)  # 用差分计算的导数，diff_without_edges=0.01；用外部的导数，diff_without_edges=0.002
 
     # 设置默认项，需要按情况修改
     default_terms = np.hstack((default_u, default_ux, default_uy, default_uxx, default_uyy))

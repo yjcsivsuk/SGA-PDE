@@ -6,7 +6,7 @@ import torch.nn as nn
 
 # 选择实验数据集
 problem = 'heat' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound', 'advection', 'ReacDiff', 'heat'
-seed = 1
+seed = 2
 device = None
 if torch.cuda.is_available():
     device = torch.device('cuda:0')

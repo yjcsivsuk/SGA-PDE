@@ -2,7 +2,7 @@ from pde import *
 import warnings
 import sys
 import datetime
-from setup import use_difference
+from setup import use_difference, diff
 warnings.filterwarnings('ignore')
 
 # SGA-PDE的主要程序, 定义 SGA 类
@@ -192,6 +192,7 @@ if __name__ == '__main__':
     print('sga_p_mute = ', sga_p_mute)
     print('sga_p_cro = ', sga_p_cro)
     print('sga_run = ', sga_run)
+    print('equation_left_right_difference = ', diff)
 
     sga = SGA(num=sga_num, depth=sga_depth, width=sga_width, p_var=sga_p_var, p_rep=sga_p_rep, p_mute=sga_p_mute, p_cro=sga_p_cro)
     sga.run(sga_run)
