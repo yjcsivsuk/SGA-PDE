@@ -428,10 +428,10 @@ else:
     print('data error without edges', diff_without_edges)  # 用差分计算的导数，diff_without_edges=0.01；用外部的导数，diff_without_edges=0.002
 
     # 设置默认项，需要按情况修改
-    default_terms = np.hstack((default_u, default_ux, default_uy, default_uxx, default_uyy))
-    default_names = ['u', 'ux', 'uy', 'uxx', 'uyy']
-    # default_terms = np.hstack((default_uxx, default_uyy))
-    # default_names = ['uxx', 'uyy']
+    # default_terms = np.hstack((default_u, default_ux, default_uy, default_uxx, default_uyy))
+    # default_names = ['u', 'ux', 'uy', 'uxx', 'uyy']
+    default_terms = np.hstack((default_uxx, default_uyy))
+    default_names = ['uxx', 'uyy']
 
     print("默认项shape:", default_terms.shape)
     num_default = default_terms.shape[1]  # 包含的默认项的数量，num_default中为一定包含的候选集
