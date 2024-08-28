@@ -2,6 +2,7 @@ from pde import *
 import warnings
 import sys
 import datetime
+from setup import use_difference
 warnings.filterwarnings('ignore')
 
 # SGA-PDE的主要程序, 定义 SGA 类
@@ -177,11 +178,12 @@ if __name__ == '__main__':
     sga_p_cro = 0.5
     sga_run = 100
 
-    log_filename = f'output/sga/{config.problem}/pop{sga_num}_depth{sga_depth}_width{sga_width}_var{sga_p_var}_replace{sga_p_rep}_mute{sga_p_mute}_cross{sga_p_cro}_run{sga_run}_seed{seed}.log'
+    log_filename = f'output/sga/{config.problem}/pop{sga_num}_depth{sga_depth}_width{sga_width}_var{sga_p_var}_replace{sga_p_rep}_mute{sga_p_mute}_cross{sga_p_cro}_run{sga_run}_seed{seed}-diff{use_difference}.log'
     sys.stdout = Logger(log_filename, sys.stdout)
 
     print('current_time: ', current_time)
     print('problem: ', config.problem)
+    print('use_difference: ', use_difference)
     print('sga_num = ', sga_num)
     print('sga_depth = ', sga_depth)
     print('sga_width = ', sga_width)

@@ -17,7 +17,7 @@ simple_mode = True
 see_tree = None
 plot_the_figures = False
 use_metadata = False 
-use_difference = False
+use_difference = True
 use_extend = True
 
 def cubic(inputs):
@@ -381,11 +381,11 @@ else:
     t = np.tile(t, (n, m, 1))  # (n,m,k)
 
     if use_difference == True:
-        ut = Diff(u, dt, t)
-        ux = Diff(u, dx, x)
-        uy = Diff(u, dy, y)
-        uxx = Diff2(u, dx, x)
-        uyy = Diff2(u, dy, y)
+        ut = Diff(u, dt, 't')
+        ux = Diff(u, dx, 'x')
+        uy = Diff(u, dy, 'y')
+        uxx = Diff2(u, dx, 'x')
+        uyy = Diff2(u, dy, 'y')
         
         default_u = np.reshape(u, (n*m*k, 1))
         default_ux = np.reshape(ux, (n*m*k, 1))

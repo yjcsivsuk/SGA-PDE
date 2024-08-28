@@ -1,0 +1,352 @@
+current_time:  2024-08-27_19-48-46
+problem:  heat
+use_difference:  False
+sga_num =  20
+sga_depth =  4
+sga_width =  5
+sga_p_var =  0.5
+sga_p_rep =  1
+sga_p_mute =  0.3
+sga_p_cro =  0.5
+sga_run =  100
+Creating the original pdes in the pool ...
+Creating the ith pde, i= 0
+a_pde.visualize(): ( ^2 (u - y))+( ^3 (( ^2 ux) - y))+( ^2 ((x d y) d^2 y))+((x - (uy d y)) * ( ^3 (0 + x)))
+evaluate_aic: 29.660529192809165
+Creating the ith pde, i= 1
+a_pde.visualize(): ((ux - (0 d y)) / (ux d y))
+evaluate_aic: 21.70319394527975
+a_err: inf 太小!
+Creating the ith pde, i= 2
+a_pde.visualize(): (x d y)+( ^3 uy)+((x + (0 d x)) d x)
+evaluate_aic: 27.20494894704543
+a_err: inf 太小!
+Creating the ith pde, i= 3
+a_pde.visualize(): ( ^2 uy)+( ^2 y)+((( ^3 y) * (y * u)) d^2 y)
+evaluate_aic: 27.303249974110706
+Creating the ith pde, i= 4
+a_pde.visualize(): (uy * (( ^2 uy) d y))+(uy d x)+(uy d^2 x)+((x + (y d y)) d y)
+evaluate_aic: 29.49790863988921
+Creating the ith pde, i= 5
+a_pde.visualize(): (ux / ( ^3 y))
+evaluate_aic: 21.70319394527975
+Creating the ith pde, i= 6
+a_pde.visualize(): ( ^3 (( ^3 u) / uy))
+evaluate_aic: 21.70319394527975
+Creating the ith pde, i= 7
+a_pde.visualize(): (y d^2 x)+(ux * uy)+(((y d^2 x) / (0 * u)) d x)+( ^3 (0 + u))+( ^2 x)
+evaluate_aic: 27.366871975124965
+Creating the ith pde, i= 8
+a_pde.visualize(): ( ^2 ( ^2 ux))+(ux / (y / y))+( ^2 (uy / ( ^3 uy)))
+evaluate_aic: 27.66855352185886
+Creating the ith pde, i= 9
+a_pde.visualize(): (((x + y) * ( ^2 x)) * ( ^2 ux))+(x d^2 x)
+evaluate_aic: 25.652732139211686
+Creating the ith pde, i= 10
+a_pde.visualize(): (y * u)
+evaluate_aic: 23.702289833217957
+Creating the ith pde, i= 11
+a_pde.visualize(): ((( ^3 uy) d x) / 0)
+evaluate_aic: 23.58055621446192
+Creating the ith pde, i= 12
+a_pde.visualize(): (u / ( ^3 uy))+(x d x)+( ^3 uy)+( ^2 ((y d y) / 0))
+evaluate_aic: 27.204920690872637
+Creating the ith pde, i= 13
+a_pde.visualize(): (u d^2 x)+( ^2 (y + y))+(uy / (0 d x))
+evaluate_aic: 27.598053974747987
+Creating the ith pde, i= 14
+a_pde.visualize(): (((uy + y) d^2 y) d y)+( ^2 (u / (0 / y)))+(((ux d x) - u) d x)+( ^2 uy)+((ux d x) d x)
+evaluate_aic: 31.289291775359423
+Creating the ith pde, i= 15
+a_pde.visualize(): (uy d x)
+evaluate_aic: 23.703177817051838
+Creating the ith pde, i= 16
+a_pde.visualize(): (uy d^2 x)
+evaluate_aic: 23.62949577174181
+a_err: inf 太小!
+Creating the ith pde, i= 17
+a_pde.visualize(): ( ^3 ux)
+evaluate_aic: 23.659389086812794
+Creating the ith pde, i= 18
+a_pde.visualize(): (u * ( ^3 (y + x)))+(((x - 0) d y) d^2 y)
+evaluate_aic: 25.679274200566432
+Creating the ith pde, i= 19
+a_pde.visualize(): (uy d^2 y)+( ^2 u)
+evaluate_aic: 25.445498219987055
+1 generation best_aic & best Eq: 21.22539850394802, ( ^3 uy)
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4163uyy + -0.0008( ^3 uy)
+1 generation repeat cross over 7 times and mutation 0 times
+2 generation best_aic & best Eq: 21.22539850394802, ( ^3 uy)
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4163uyy + -0.0008( ^3 uy)
+2 generation repeat cross over 19 times and mutation 4 times
+3 generation best_aic & best Eq: 21.22539850394802, ( ^3 uy)
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4163uyy + -0.0008( ^3 uy)
+3 generation repeat cross over 20 times and mutation 4 times
+4 generation best_aic & best Eq: 21.22539850394802, ( ^3 uy)
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4163uyy + -0.0008( ^3 uy)
+4 generation repeat cross over 20 times and mutation 1 times
+5 generation best_aic & best Eq: 21.22539850394802, ( ^3 uy)
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4163uyy + -0.0008( ^3 uy)
+5 generation repeat cross over 20 times and mutation 2 times
+6 generation best_aic & best Eq: 21.22539850394802, ( ^3 uy)
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4163uyy + -0.0008( ^3 uy)
+6 generation repeat cross over 20 times and mutation 6 times
+7 generation best_aic & best Eq: 21.22539850394802, ( ^3 uy)
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4163uyy + -0.0008( ^3 uy)
+7 generation repeat cross over 20 times and mutation 5 times
+8 generation best_aic & best Eq: 21.22539850394802, ( ^3 uy)
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4163uyy + -0.0008( ^3 uy)
+8 generation repeat cross over 20 times and mutation 3 times
+9 generation best_aic & best Eq: 21.22539850394802, ( ^3 uy)
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4163uyy + -0.0008( ^3 uy)
+9 generation repeat cross over 20 times and mutation 2 times
+10 generation best_aic & best Eq: 21.22539850394802, ( ^3 uy)
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4163uyy + -0.0008( ^3 uy)
+10 generation repeat cross over 20 times and mutation 3 times
+11 generation best_aic & best Eq: 21.22539850394802, ( ^3 uy)
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4163uyy + -0.0008( ^3 uy)
+11 generation repeat cross over 20 times and mutation 4 times
+12 generation best_aic & best Eq: 21.22539850394802, ( ^3 uy)
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4163uyy + -0.0008( ^3 uy)
+12 generation repeat cross over 20 times and mutation 8 times
+13 generation best_aic & best Eq: 21.22539850394802, ( ^3 uy)
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4163uyy + -0.0008( ^3 uy)
+13 generation repeat cross over 20 times and mutation 3 times
+14 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+14 generation repeat cross over 20 times and mutation 7 times
+15 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+15 generation repeat cross over 20 times and mutation 4 times
+16 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+16 generation repeat cross over 20 times and mutation 6 times
+17 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+17 generation repeat cross over 20 times and mutation 9 times
+18 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+18 generation repeat cross over 20 times and mutation 6 times
+19 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+19 generation repeat cross over 20 times and mutation 5 times
+20 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+20 generation repeat cross over 20 times and mutation 8 times
+21 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+21 generation repeat cross over 20 times and mutation 7 times
+22 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+22 generation repeat cross over 20 times and mutation 7 times
+23 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+23 generation repeat cross over 20 times and mutation 3 times
+24 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+24 generation repeat cross over 20 times and mutation 5 times
+25 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+25 generation repeat cross over 20 times and mutation 4 times
+26 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+26 generation repeat cross over 20 times and mutation 6 times
+27 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+27 generation repeat cross over 20 times and mutation 6 times
+28 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+28 generation repeat cross over 20 times and mutation 7 times
+29 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+29 generation repeat cross over 20 times and mutation 8 times
+30 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+30 generation repeat cross over 20 times and mutation 8 times
+31 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+31 generation repeat cross over 20 times and mutation 7 times
+32 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+32 generation repeat cross over 20 times and mutation 2 times
+33 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+33 generation repeat cross over 20 times and mutation 3 times
+34 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+34 generation repeat cross over 20 times and mutation 7 times
+35 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+35 generation repeat cross over 20 times and mutation 4 times
+36 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+36 generation repeat cross over 20 times and mutation 6 times
+37 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+37 generation repeat cross over 20 times and mutation 6 times
+38 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+38 generation repeat cross over 20 times and mutation 2 times
+39 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+39 generation repeat cross over 20 times and mutation 6 times
+40 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+40 generation repeat cross over 20 times and mutation 5 times
+41 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+41 generation repeat cross over 20 times and mutation 4 times
+42 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+42 generation repeat cross over 20 times and mutation 9 times
+43 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+43 generation repeat cross over 20 times and mutation 5 times
+44 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+44 generation repeat cross over 20 times and mutation 5 times
+45 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+45 generation repeat cross over 20 times and mutation 9 times
+46 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+46 generation repeat cross over 20 times and mutation 8 times
+47 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+47 generation repeat cross over 20 times and mutation 7 times
+48 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+48 generation repeat cross over 20 times and mutation 6 times
+49 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+49 generation repeat cross over 20 times and mutation 9 times
+50 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+50 generation repeat cross over 20 times and mutation 8 times
+51 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+51 generation repeat cross over 20 times and mutation 6 times
+52 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+52 generation repeat cross over 20 times and mutation 9 times
+53 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+53 generation repeat cross over 20 times and mutation 4 times
+54 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+54 generation repeat cross over 20 times and mutation 8 times
+55 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+55 generation repeat cross over 20 times and mutation 8 times
+56 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+56 generation repeat cross over 20 times and mutation 2 times
+57 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+57 generation repeat cross over 20 times and mutation 5 times
+58 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+58 generation repeat cross over 20 times and mutation 2 times
+59 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+59 generation repeat cross over 20 times and mutation 7 times
+60 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+60 generation repeat cross over 20 times and mutation 4 times
+61 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+61 generation repeat cross over 20 times and mutation 10 times
+62 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+62 generation repeat cross over 20 times and mutation 2 times
+63 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+63 generation repeat cross over 20 times and mutation 6 times
+64 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+64 generation repeat cross over 20 times and mutation 11 times
+65 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+65 generation repeat cross over 20 times and mutation 11 times
+66 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+66 generation repeat cross over 20 times and mutation 5 times
+67 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+67 generation repeat cross over 20 times and mutation 6 times
+68 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+68 generation repeat cross over 20 times and mutation 4 times
+69 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+69 generation repeat cross over 20 times and mutation 6 times
+70 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+70 generation repeat cross over 20 times and mutation 7 times
+71 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+71 generation repeat cross over 20 times and mutation 9 times
+72 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+72 generation repeat cross over 20 times and mutation 4 times
+73 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+73 generation repeat cross over 20 times and mutation 6 times
+74 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+74 generation repeat cross over 20 times and mutation 3 times
+75 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+75 generation repeat cross over 20 times and mutation 7 times
+76 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+76 generation repeat cross over 20 times and mutation 6 times
+77 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+77 generation repeat cross over 20 times and mutation 6 times
+78 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+78 generation repeat cross over 20 times and mutation 4 times
+79 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+79 generation repeat cross over 20 times and mutation 9 times
+80 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+80 generation repeat cross over 20 times and mutation 8 times
+81 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+81 generation repeat cross over 20 times and mutation 6 times
+82 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+82 generation repeat cross over 20 times and mutation 7 times
+83 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+83 generation repeat cross over 20 times and mutation 5 times
+84 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+84 generation repeat cross over 20 times and mutation 7 times
+85 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+85 generation repeat cross over 20 times and mutation 4 times
+86 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+86 generation repeat cross over 20 times and mutation 4 times
+87 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+87 generation repeat cross over 20 times and mutation 3 times
+88 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+88 generation repeat cross over 20 times and mutation 8 times
+89 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+89 generation repeat cross over 20 times and mutation 7 times
+90 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+90 generation repeat cross over 20 times and mutation 9 times
+91 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+91 generation repeat cross over 20 times and mutation 8 times
+92 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
+best concise Eq: 0.0113ux + -0.0323uy + 0.4712uxx + 0.5324uyy + -0.0022(( ^2 ( ^2 y)) * ( ^3 uy))
+92 generation repeat cross over 20 times and mutation 7 times
+93 generation best_aic & best Eq: 20.715801947533976, (( ^2 ( ^2 y)) * ( ^3 uy))
