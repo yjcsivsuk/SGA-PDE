@@ -1,0 +1,100 @@
+current_time:  2024-08-28_15-16-26
+problem:  heat
+use_difference:  False
+sga_num =  20
+sga_depth =  4
+sga_width =  5
+sga_p_var =  0.5
+sga_p_rep =  1
+sga_p_mute =  0.3
+sga_p_cro =  0.5
+sga_run =  100
+equation_left_right_difference =  0.021270753277364936
+Creating the original pdes in the pool ...
+Creating the ith pde, i= 0
+a_pde.visualize(): (((0 * uy) + x) * uy)+(((x d^2 y) d x) d^2 y)
+evaluate_aic: 23.67637470594704
+Creating the ith pde, i= 1
+a_pde.visualize(): (( ^3 (uy + y)) * x)+(y d x)
+evaluate_aic: 25.312158033764483
+Creating the ith pde, i= 2
+a_pde.visualize(): (ux / u)+((uy * (y d^2 x)) * ((0 - u) + (y * u)))+((u + (u d^2 x)) / x)
+evaluate_aic: 25.70305386728127
+Creating the ith pde, i= 3
+a_pde.visualize(): (y d x)+(u / ((u / u) d y))
+evaluate_aic: 25.703193945279818
+Creating the ith pde, i= 4
+a_pde.visualize(): (uy d^2 x)+( ^2 ( ^3 (y / x)))+( ^2 ((u + ux) - (uy d y)))
+evaluate_aic: 27.535661075222063
+Creating the ith pde, i= 5
+a_pde.visualize(): ( ^2 y)
+evaluate_aic: 23.59805427377612
+Creating the ith pde, i= 6
+a_pde.visualize(): ( ^2 (y * (0 - x)))+(y d y)+((y + y) * (u d y))
+evaluate_aic: 27.485858997360154
+Creating the ith pde, i= 7
+a_pde.visualize(): ( ^3 y)+(y / ( ^3 (x d y)))+( ^3 y)+( ^2 u)+( ^3 y)
+evaluate_aic: 31.6897880601963
+Creating the ith pde, i= 8
+a_pde.visualize(): ((x d x) / (y - (u + uy)))+(((y d^2 x) - y) / ( ^3 uy))+(ux d^2 x)
+evaluate_aic: 23.56564173815332
+Creating the ith pde, i= 9
+a_pde.visualize(): (y d^2 x)+((u * ux) / ( ^3 uy))+( ^3 (y * (ux d x)))+( ^3 ( ^3 u))+( ^2 x)
+evaluate_aic: 27.65577431462947
+Creating the ith pde, i= 10
+a_pde.visualize(): (((ux d y) d^2 x) d^2 x)+( ^3 (x d^2 y))+(uy d x)+((x + uy) d y)+( ^2 x)
+evaluate_aic: 31.67430329101242
+Creating the ith pde, i= 11
+a_pde.visualize(): ((x d^2 x) * u)+((y d^2 y) d^2 y)+(( ^3 x) d x)+(x d^2 y)
+evaluate_aic: 29.700828365133148
+Creating the ith pde, i= 12
+a_pde.visualize(): ( ^2 ux)+(uy d y)+(ux d x)+((0 + x) d y)
+evaluate_aic: 29.533449769377384
+Creating the ith pde, i= 13
+a_pde.visualize(): ( ^2 uy)
+evaluate_aic: 23.331314587092834
+Creating the ith pde, i= 14
+a_pde.visualize(): ( ^2 ((u * x) d^2 x))+( ^2 ((u * uy) d y))+((y d y) d^2 x)
+evaluate_aic: 27.55508170521702
+Creating the ith pde, i= 15
+a_pde.visualize(): (y d y)+( ^3 (u d x))+((x / (y / u)) / ( ^2 x))
+evaluate_aic: 25.205130457427842
+Creating the ith pde, i= 16
+a_pde.visualize(): ( ^3 ((ux + ux) / y))+((y - (y d^2 x)) d y)+((u / ( ^3 y)) / ( ^2 u))
+evaluate_aic: 25.695319608867457
+Creating the ith pde, i= 17
+a_pde.visualize(): ( ^2 ( ^3 y))+(( ^2 (y d x)) * ux)
+evaluate_aic: 25.636950304013936
+Creating the ith pde, i= 18
+a_pde.visualize(): (u d^2 x)+( ^2 uy)+( ^3 (( ^2 x) d^2 x))
+evaluate_aic: 27.303466892893333
+Creating the ith pde, i= 19
+a_pde.visualize(): ((uy + x) d x)+(u * uy)
+evaluate_aic: 25.666000082293444
+1 generation best_aic & best Eq: 21.225529091947408, ( ^3 ((ux + ux) / y))+( ^3 (u d x))+((x / (y / u)) / ( ^2 x))
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4162uyy
+1 generation repeat cross over 1 times and mutation 1 times
+2 generation best_aic & best Eq: 21.225529091947408, ( ^3 ((ux + ux) / y))+( ^3 (u d x))+((x / (y / u)) / ( ^2 x))
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4162uyy
+2 generation repeat cross over 4 times and mutation 0 times
+3 generation best_aic & best Eq: 21.225529091947408, ( ^3 ((ux + ux) / y))+( ^3 (u d x))+((x / (y / u)) / ( ^2 x))
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4162uyy
+3 generation repeat cross over 7 times and mutation 0 times
+4 generation best_aic & best Eq: 21.225529091947408, ( ^3 ((ux + ux) / y))+( ^3 (u d x))+((x / (y / u)) / ( ^2 x))
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4162uyy
+4 generation repeat cross over 12 times and mutation 0 times
+5 generation best_aic & best Eq: 21.225529091947408, ( ^3 ((ux + ux) / y))+( ^3 (u d x))+((x / (y / u)) / ( ^2 x))
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4162uyy
+5 generation repeat cross over 12 times and mutation 0 times
+6 generation best_aic & best Eq: 21.225529091947408, ( ^3 ((ux + ux) / y))+( ^3 (u d x))+((x / (y / u)) / ( ^2 x))
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4162uyy
+6 generation repeat cross over 12 times and mutation 1 times
+7 generation best_aic & best Eq: 21.225529091947408, ( ^3 ((ux + ux) / y))+( ^3 (u d x))+((x / (y / u)) / ( ^2 x))
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4162uyy
+7 generation repeat cross over 12 times and mutation 0 times
+8 generation best_aic & best Eq: 21.225529091947408, ( ^3 ((ux + ux) / y))+( ^3 (u d x))+((x / (y / u)) / ( ^2 x))
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4162uyy
+8 generation repeat cross over 17 times and mutation 0 times
+9 generation best_aic & best Eq: 21.225529091947408, ( ^3 ((ux + ux) / y))+( ^3 (u d x))+((x / (y / u)) / ( ^2 x))
+best concise Eq: 0.0223u + 0.0156ux + 0.4758uxx + 0.4162uyy
+9 generation repeat cross over 15 times and mutation 0 times
