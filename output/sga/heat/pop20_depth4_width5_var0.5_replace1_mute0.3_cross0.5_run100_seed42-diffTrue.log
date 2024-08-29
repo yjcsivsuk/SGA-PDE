@@ -1,0 +1,149 @@
+current_time:  2024-08-29_14-48-33
+problem:  heat
+use_difference:  True
+sga_num =  20
+sga_depth =  4
+sga_width =  5
+sga_p_var =  0.5
+sga_p_rep =  1
+sga_p_mute =  0.3
+sga_p_cro =  0.5
+sga_run =  100
+equation_left_right_difference =  0.00012973671065651276
+Creating the original pdes in the pool ...
+Creating the ith pde, i= 0
+a_pde.visualize(): (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+evaluate_aic: -7.387360957363164
+Creating the ith pde, i= 1
+a_pde.visualize(): (uy d y)
+evaluate_aic: -5.413363235511236
+Creating the ith pde, i= 2
+a_pde.visualize(): ( ^3 uy)
+evaluate_aic: -7.387360957363164
+Creating the ith pde, i= 3
+a_pde.visualize(): (uy d^2 y)+(u d x)
+evaluate_aic: -3.403699573460756
+Creating the ith pde, i= 4
+a_pde.visualize(): (  ux)+(  (x + ux))+(uy d^2 y)+(uy d^2 y)+(u d^2 y)
+evaluate_aic: 8.54317124219906
+Creating the ith pde, i= 5
+a_pde.visualize(): ( ^2 x)+(ux d^2 x)+( ^2 (x * (x + uy)))
+evaluate_aic: -7.387360957363164
+Creating the ith pde, i= 6
+a_pde.visualize(): ( ^2 ( ^2 ( ^3 uy)))+(x / ( ^2 ux))+(  y)
+evaluate_aic: -7.387360957363164
+a_err: inf 太小!
+Creating the ith pde, i= 7
+a_pde.visualize(): (  ((ux / u) - ( ^3 ux)))
+evaluate_aic: -7.387360957363164
+Creating the ith pde, i= 8
+a_pde.visualize(): (u d x)+(((u d^2 x) - x) / (ux d^2 y))+( ^3 (  ux))
+evaluate_aic: -3.4036995298585317
+Creating the ith pde, i= 9
+a_pde.visualize(): (( ^3 (uy * uy)) * ux)+( ^3 (ux d^2 x))
+evaluate_aic: -7.387360957363164
+Creating the ith pde, i= 10
+a_pde.visualize(): (u d^2 x)
+evaluate_aic: 0.5457433877766658
+Creating the ith pde, i= 11
+a_pde.visualize(): (  u)+(ux d x)
+evaluate_aic: -1.443348443581927
+Creating the ith pde, i= 12
+a_pde.visualize(): ( ^3 u)+(u d^2 y)+(  ux)+( ^2 (u - (  x)))
+evaluate_aic: -1.4038137755458635
+Creating the ith pde, i= 13
+a_pde.visualize(): (ux d^2 x)+( ^3 u)
+evaluate_aic: -7.387360957363164
+Creating the ith pde, i= 14
+a_pde.visualize(): (ux d x)
+evaluate_aic: -5.403825992847038
+Creating the ith pde, i= 15
+a_pde.visualize(): (uy / ux)+( ^3 (  ( ^2 y)))
+evaluate_aic: -7.387360957363164
+Creating the ith pde, i= 16
+a_pde.visualize(): ((( ^2 u) - x) * ux)
+evaluate_aic: -7.387360957363164
+Creating the ith pde, i= 17
+a_pde.visualize(): (u d^2 x)+(((u * uy) - (ux + y)) * x)+((uy d^2 y) / 0)
+evaluate_aic: -5.387200579762171
+Creating the ith pde, i= 18
+a_pde.visualize(): (  (  uy))+(ux d^2 x)
+evaluate_aic: -3.422259657986631
+Creating the ith pde, i= 19
+a_pde.visualize(): ( ^2 ( ^3 uy))+(  ux)
+evaluate_aic: 2.538463009558221
+1 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+1 generation repeat cross over 2 times and mutation 1 times
+2 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+2 generation repeat cross over 5 times and mutation 2 times
+3 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+3 generation repeat cross over 9 times and mutation 2 times
+4 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+4 generation repeat cross over 5 times and mutation 1 times
+5 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+5 generation repeat cross over 7 times and mutation 1 times
+6 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+6 generation repeat cross over 1 times and mutation 2 times
+7 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+7 generation repeat cross over 8 times and mutation 1 times
+8 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+8 generation repeat cross over 7 times and mutation 1 times
+9 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+9 generation repeat cross over 7 times and mutation 5 times
+10 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+10 generation repeat cross over 9 times and mutation 1 times
+11 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+11 generation repeat cross over 5 times and mutation 2 times
+12 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+12 generation repeat cross over 15 times and mutation 3 times
+13 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+13 generation repeat cross over 4 times and mutation 1 times
+14 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+14 generation repeat cross over 8 times and mutation 4 times
+15 generation best_aic & best Eq: -7.387360957363164, (y / (0 - (0 * uy)))+((u d x) / ux)+(ux d^2 x)+( ^2 u)
+4 9
+best concise Eq: 0.4921uxx + 0.5064uyy
+We are close to the answer, pay attention
+15 generation repeat cross over 7 times and mutation 1 times

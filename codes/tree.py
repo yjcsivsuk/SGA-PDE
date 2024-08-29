@@ -58,11 +58,24 @@ class Tree:
                 if parent.child_num == 0: # 如果当前node没有子节点，则跳过当前循环的剩余语句，然后继续进行下一轮循环
                     continue
                 for j in range(parent.child_num):
-                    # rule 1: parent var为d 且j为1时，必须确保右子节点为x
-                    if parent.name in {'d', 'd^2'} and j == 1: # j == 0 为d的左侧节点，j == 1为d的右侧节点
-                        node = den[np.random.randint(0, len(den))] # 随机产生一个微分运算的denominator，一般是xyt
+                    # rule 0: parent var为d 且j为0时，必须确保左子节点必须包含u或者为0
+                    if parent.name in {'d', 'd^2'} and j == 0:  # j == 0 为d的左侧节点，j == 1为d的右侧节点
+                        node = numerator[np.random.randint(0, len(numerator))] # 随机产生一个微分运算的numerator，一般是u,ux,uy,0
                         node = Node(depth=depth, idx=len(self.tree[depth]), parent_idx=parent_idx, name=node[0],
                                     var=node[2], full=node, child_num=int(node[1]), child_st=None)
+                        self.tree[depth].append(node)
+                    # rule 1: parent var为d 且j为1时，必须确保右子节点为x,y，左子结点为u,ux,uy,0，并且要避免y d x的情况出现
+                    # 但是这里感觉if的条件判断用的不对，万一左子节点是平方运算符呢？还没想好怎么改
+                    elif parent.name in {'d', 'd^2'} and j == 1:
+                        node = []
+                        if self.tree[depth][0].name == 'ux':
+                            node = den[0]
+                        elif self.tree[depth][0].name == 'uy':
+                            node = den[1]
+                        else:
+                            node = den[np.random.randint(0, len(den))]  # 随机产生一个微分运算的denominator，一般是x,y
+                        node = Node(depth=depth, idx=len(self.tree[depth]), parent_idx=parent_idx, name=node[0],
+                                        var=node[2], full=node, child_num=int(node[1]), child_st=None)
                         self.tree[depth].append(node)
                     # rule 2: 最底一层必须是var，不能是op
                     elif depth == max_depth - 1:

@@ -17,11 +17,14 @@ simple_mode = True
 see_tree = None
 plot_the_figures = False
 use_metadata = False 
-use_difference = False
+use_difference = True
 use_extend = True
 
 def cubic(inputs):
-        return np.power(inputs, 3)
+    return np.power(inputs, 3)
+
+def identity(inputs):
+    return inputs
 
 if use_extend == False:
     if use_difference == True:
@@ -480,17 +483,16 @@ else:
     zeros = np.zeros(u.shape)
 
     if simple_mode:
-        ALL = np.array([['+', 2, np.add], ['-', 2, np.subtract],['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2], 
-                        ['u', 0, u], ['x', 0, x], ['ux', 0, ux],  ['0', 0, zeros],
-                        ['^2', 1, np.square], ['^3', 1, cubic], ['y', 0, y], ['uy', 0, uy]], dtype=object)
-        OPS = np.array([['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2], ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)
-        ROOT = np.array([['*', 2, np.multiply], ['d', 2, Diff], ['d^2', 2, Diff2], ['/', 2, divide], ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)  # 根节点不包含+,-
-        OP1 = np.array([['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)  # 不能更改，否则sga程序运行会卡住
+        ALL = np.array([['', 1, identity], ['+', 2, np.add], ['-', 2, np.subtract],['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2], ['u', 0, u], ['x', 0, x], ['ux', 0, ux],  ['0', 0, zeros], ['^2', 1, np.square], ['^3', 1, cubic], ['y', 0, y], ['uy', 0, uy]], dtype=object)
+        OPS = np.array([['', 1, identity], ['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2], ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)
+        ROOT = np.array([['', 1, identity], ['*', 2, np.multiply], ['d', 2, Diff], ['d^2', 2, Diff2], ['/', 2, divide], ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)  # 根节点不包含+,-
+        OP1 = np.array([['', 1, identity], ['^2', 1, np.square], ['^3', 1, cubic]], dtype=object)  # 不能更改，否则sga程序运行会卡住 # 加一个id操作，不知道能不能正常运行
         OP2 = np.array([['+', 2, np.add], ['-', 2, np.subtract], ['*', 2, np.multiply], ['/', 2, divide], ['d', 2, Diff], ['d^2', 2, Diff2]], dtype=object)
         # VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux], ['uxx', 0, uxx], ['u^2', 0, u**2]], dtype=object)  # 变量，按照情况进行修改，在PDE_compound数据集中起作用
         VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux], ['y', 0, y], ['uy', 0, uy]], dtype=object)
         # VARS = np.array([['u', 0, u], ['x', 0, x], ['0', 0, zeros], ['ux', 0, ux], ['y', 0, y], ['uy', 0, uy], ['uxx', 0, uxx], ['uyy', 0, uyy]], dtype=object)
-        den = np.array([['x', 0, x], ['y', 0, y]], dtype=object)
+        den = np.array([['x', 0, x], ['y', 0, y]], dtype=object)  # 针对微分符d的分母denominator
+        numerator = np.array([['u', 0, u], ['ux', 0, ux], ['uy', 0, uy], ['0', 0, zeros]], dtype=object)  # 针对微分符d的分子numerator
 
     pde_lib, err_lib = [], []
 
