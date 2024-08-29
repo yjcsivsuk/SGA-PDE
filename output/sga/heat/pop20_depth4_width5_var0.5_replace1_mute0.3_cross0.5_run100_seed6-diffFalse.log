@@ -611,3 +611,276 @@ We are close to the answer, pay attention
 best concise Eq: -0.0107( ^2 (( ^2 y) d^2 y))
 We are close to the answer, pay attention
 35 generation repeat cross over 11 times and mutation 0 times
+current_time:  2024-08-29_12-54-15
+problem:  heat
+use_difference:  False
+sga_num =  20
+sga_depth =  4
+sga_width =  5
+sga_p_var =  0.5
+sga_p_rep =  1
+sga_p_mute =  0.3
+sga_p_cro =  0.5
+sga_run =  100
+equation_left_right_difference =  0.00011743263045416681
+Creating the original pdes in the pool ...
+Creating the ith pde, i= 0
+a_pde.visualize(): (x d^2 y)
+evaluate_aic: -7.782432376970421
+Creating the ith pde, i= 1
+a_pde.visualize(): (ux d y)+( ^3 uy)
+evaluate_aic: -5.827481427961908
+Creating the ith pde, i= 2
+a_pde.visualize(): (((ux - u) - 0) / ( ^2 (x d x)))+(uy d^2 y)+( ^3 x)
+evaluate_aic: -1.8178139087327754
+Creating the ith pde, i= 3
+a_pde.visualize(): ((x d x) d^2 x)
+evaluate_aic: -7.782432376970421
+Creating the ith pde, i= 4
+a_pde.visualize(): ((y * y) d^2 y)+( ^2 x)+(y / u)
+evaluate_aic: -7.782432376970421
+Creating the ith pde, i= 5
+a_pde.visualize(): (uy * x)
+evaluate_aic: -7.782432376970421
+Creating the ith pde, i= 6
+a_pde.visualize(): ( ^3 ( ^2 u))+(( ^3 ux) / ux)
+evaluate_aic: -7.782432376970421
+Creating the ith pde, i= 7
+a_pde.visualize(): ( ^3 u)+(uy * (uy / (y / uy)))+( ^3 (ux + u))
+evaluate_aic: -7.782432376970421
+Creating the ith pde, i= 8
+a_pde.visualize(): (( ^2 uy) d x)
+evaluate_aic: -7.782432376970421
+Creating the ith pde, i= 9
+a_pde.visualize(): ( ^2 uy)+((x d y) d y)
+evaluate_aic: -7.782432376970421
+Creating the ith pde, i= 10
+a_pde.visualize(): ( ^2 y)+(y d x)+(u d^2 y)
+evaluate_aic: -5.820889776433486
+Creating the ith pde, i= 11
+a_pde.visualize(): (u d^2 y)
+evaluate_aic: -5.820889776433486
+Creating the ith pde, i= 12
+a_pde.visualize(): (y / ( ^3 (0 d^2 y)))+((x - y) d x)+( ^3 ((uy * ux) * x))
+evaluate_aic: -7.782432376970421
+Creating the ith pde, i= 13
+a_pde.visualize(): ( ^2 ((ux d^2 x) + (y + 0)))+(uy * y)+(u * uy)+(ux d^2 x)+((( ^2 u) * (uy d^2 x)) d^2 y)
+evaluate_aic: -7.782432376970421
+Creating the ith pde, i= 14
+a_pde.visualize(): ( ^2 (x * ux))+(((y d x) - (x + u)) d^2 x)+(ux d^2 y)+((ux d^2 y) d^2 y)
+evaluate_aic: -5.783861911970433
+Creating the ith pde, i= 15
+a_pde.visualize(): (y d y)+(((x - y) - (u + 0)) d^2 y)
+evaluate_aic: -5.820889776433608
+Creating the ith pde, i= 16
+a_pde.visualize(): ( ^2 ux)
+evaluate_aic: -7.782432376970421
+Creating the ith pde, i= 17
+a_pde.visualize(): ((( ^3 uy) / (uy d x)) d x)+(y d x)+( ^2 ux)+(u / ( ^3 (y * ux)))+((u * (u - y)) * ux)
+evaluate_aic: -7.782432376970421
+Creating the ith pde, i= 18
+a_pde.visualize(): (ux d^2 x)+((u + y) / ( ^2 (x + x)))+(x d^2 x)
+evaluate_aic: -7.782432376970421
+Creating the ith pde, i= 19
+a_pde.visualize(): ( ^3 y)+( ^3 x)+( ^2 (y / 0))
+evaluate_aic: -7.782432376970421
+1 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+1 generation repeat cross over 2 times and mutation 0 times
+2 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+2 generation repeat cross over 9 times and mutation 1 times
+3 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+3 generation repeat cross over 3 times and mutation 0 times
+4 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+4 generation repeat cross over 3 times and mutation 1 times
+5 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+5 generation repeat cross over 5 times and mutation 2 times
+6 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+6 generation repeat cross over 8 times and mutation 0 times
+7 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+7 generation repeat cross over 4 times and mutation 0 times
+8 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+8 generation repeat cross over 5 times and mutation 1 times
+9 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+9 generation repeat cross over 4 times and mutation 0 times
+10 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+10 generation repeat cross over 4 times and mutation 1 times
+11 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+11 generation repeat cross over 12 times and mutation 2 times
+12 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+12 generation repeat cross over 7 times and mutation 0 times
+13 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+13 generation repeat cross over 6 times and mutation 1 times
+14 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+14 generation repeat cross over 4 times and mutation 0 times
+15 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+15 generation repeat cross over 3 times and mutation 0 times
+16 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+16 generation repeat cross over 7 times and mutation 3 times
+17 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+17 generation repeat cross over 1 times and mutation 1 times
+18 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+18 generation repeat cross over 8 times and mutation 3 times
+19 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+19 generation repeat cross over 11 times and mutation 2 times
+20 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+20 generation repeat cross over 4 times and mutation 1 times
+21 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+21 generation repeat cross over 12 times and mutation 3 times
+22 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+22 generation repeat cross over 12 times and mutation 1 times
+23 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+23 generation repeat cross over 4 times and mutation 0 times
+24 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+24 generation repeat cross over 5 times and mutation 0 times
+25 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+25 generation repeat cross over 4 times and mutation 0 times
+26 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+26 generation repeat cross over 7 times and mutation 4 times
+27 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+27 generation repeat cross over 4 times and mutation 1 times
+28 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+28 generation repeat cross over 6 times and mutation 0 times
+29 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+29 generation repeat cross over 9 times and mutation 0 times
+30 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+30 generation repeat cross over 9 times and mutation 2 times
+31 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+31 generation repeat cross over 8 times and mutation 2 times
+32 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+32 generation repeat cross over 6 times and mutation 0 times
+33 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+33 generation repeat cross over 6 times and mutation 1 times
+34 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+34 generation repeat cross over 4 times and mutation 1 times
+35 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+35 generation repeat cross over 7 times and mutation 0 times
+36 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+36 generation repeat cross over 6 times and mutation 3 times
+37 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+37 generation repeat cross over 7 times and mutation 3 times
+38 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+38 generation repeat cross over 10 times and mutation 1 times
+39 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+39 generation repeat cross over 7 times and mutation 4 times
+40 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+40 generation repeat cross over 7 times and mutation 1 times
+41 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+41 generation repeat cross over 7 times and mutation 1 times
+42 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+42 generation repeat cross over 8 times and mutation 0 times
+43 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+43 generation repeat cross over 4 times and mutation 0 times
+44 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+44 generation repeat cross over 6 times and mutation 1 times
+45 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+45 generation repeat cross over 3 times and mutation 0 times
+46 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+46 generation repeat cross over 9 times and mutation 1 times
+47 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+47 generation repeat cross over 11 times and mutation 1 times
+48 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+48 generation repeat cross over 6 times and mutation 4 times
+49 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+49 generation repeat cross over 6 times and mutation 3 times
+50 generation best_aic & best Eq: -7.782432376970421, (x d^2 y)
+best concise Eq: 0.5021uxx + 0.4905uyy
+We are close to the answer, pay attention
+50 generation repeat cross over 7 times and mutation 1 times
