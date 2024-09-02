@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 
 # 选择实验数据集
-problem = 'synthetic1' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound', 'advection', 'ReacDiff', 'heat', 'synthetic1'
+problem = 'allencahn' # 'Burgers', 'chafee-infante', 'Kdv', 'PDE_divide', 'PDE_compound', 'advection', 'ReacDiff', 'heat', 'allencahn'
 seed = 0
 device = None
 if torch.cuda.is_available():
@@ -153,19 +153,19 @@ if problem == 'heat':
     right_side_origin = 'right_side_origin = 0.5*uxx_origin + 0.5*uyy_orgin'
     left_side_origin = 'left_side_origin = ut_origin'
 
-# synthetic: ut = u * ux + x * uxx + a * uy + uyy
-if problem == 'synthetic1':
-    u = np.load('data/synthetic1_xyt.npy')  # (100,100,21)
-    x = np.load("data/synthetic1_x.npy")  # (100,)
-    y = np.load("data/synthetic1_y.npy")  # (100,)
-    t = np.load("data/synthetic1_t.npy")  # (21,)
-    ut = np.load('data/synthetic1_ut.npy')  # (210000,1)
-    default_u = np.load('data/synthetic1_out.npy')  # (210000,1)
-    default_ux = np.load('data/synthetic1_ux.npy')  # (210000,1)
-    default_uy = np.load('data/synthetic1_uy.npy')  # (210000,1)
-    default_uxx = np.load('data/synthetic1_uxx.npy')  # (210000,1)
-    default_uyy = np.load('data/synthetic1_uyy.npy')  # (210000,1)
-    right_side = 'right_side = u * ux + x * uxx + 0.5 * uy + uyy'
+# allen-cahn: ut = a*(uxx + uyy) - u + u**3
+if problem == 'allencahn':
+    u = np.load('data/allencahn_xyt.npy')  # (100,100,21)
+    x = np.load("data/allencahn_x.npy")  # (100,)
+    y = np.load("data/allencahn_y.npy")  # (100,)
+    t = np.load("data/allencahn_t.npy")  # (21,)
+    ut = np.load('data/allencahn_ut.npy')  # (210000,1)
+    default_u = np.load('data/allencahn_out.npy')  # (210000,1)
+    default_ux = np.load('data/allencahn_ux.npy')  # (210000,1)
+    default_uy = np.load('data/allencahn_uy.npy')  # (210000,1)
+    default_uxx = np.load('data/allencahn_uxx.npy')  # (210000,1)
+    default_uyy = np.load('data/allencahn_uyy.npy')  # (210000,1)
+    right_side = 'right_side = 0.001*(uxx + uyy) - u + u**3'
     left_side = 'left_side = ut'
 
 # 超参数设定
